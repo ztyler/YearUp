@@ -1,0 +1,25 @@
+
+public class Intro {
+
+	public static void main(String[] args) {
+		
+		Help(1);
+		Help(2);
+		Help(14);
+
+	}
+	
+	public static void Help( int option ) {
+		
+		if (option == 1) {
+			System.out.println("Help me!");
+		}
+		else if (option == 2) {
+			System.out.println("Help them!");
+		}
+		else {
+			System.out.println("Help yourself!");
+		}
+	}
+
+}
