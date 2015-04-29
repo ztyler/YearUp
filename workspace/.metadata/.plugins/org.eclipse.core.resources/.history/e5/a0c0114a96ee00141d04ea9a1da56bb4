@@ -5,12 +5,12 @@ public class CalculateArea {
 		double circleArea = CalculateCircleArea(5);
 		System.out.printf("The area of the circle is %.2f\n", circleArea);
 		
-		double rectArea = CalculateRectArea(5, 6);
-		System.out.printf("The area of the rectangle is %.0f\n", rectArea);
+		double rectAngle = CalculateRectArea(5, 6);
+		System.out.printf("The area of the rectangle is %.0f\n", rectAngle);
 	}
 	
 	static double CalculateCircleArea(int rad) {
-		return rad * rad * Math.PI;
+		return rad * rad * 3.14;
 	}
 	
 	static double CalculateRectArea(int length, int width) {
