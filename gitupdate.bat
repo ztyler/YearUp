@@ -1,3 +1,4 @@
+set PATH=%PATH%;C:\DRR\CMD
 @ECHO OFF
 CLS
 ECHO --------------------------------
