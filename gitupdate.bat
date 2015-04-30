@@ -1,18 +1,21 @@
 @ECHO OFF
+CLS
 ECHO --------------------------------
-ECHO 4DD1NG t3h F1L3S!11!!!1!!!!!
+ECHO ADDING ALL NEW FILES
 ECHO --------------------------------
 
 git add -A
 
+ECHO files added
+
 ECHO --------------------------------
-ECHO C0MM1771NG t3h FILES!!!!1!!1
+ECHO COMMITTING CHANGES
 ECHO --------------------------------
 
 git commit
 
 ECHO --------------------------------
-ECHO S3ND1NG FILEZ TO T3H INT3RW3BZ!!
+ECHO SENDING FILES TO GITHUB.COM
 ECHO --------------------------------
 git push
 
