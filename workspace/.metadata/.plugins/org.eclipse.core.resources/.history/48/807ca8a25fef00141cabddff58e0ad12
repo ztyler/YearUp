@@ -1,0 +1,20 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Circle bigCircle = new Circle(10);
+		Circle smallCircle = new Circle(5, "blue");
+		
+		System.out.printf("smallCircle\n"
+				+ "\tradius: %.0f\n\tcolor: ", 
+				smallCircle.calcArea());
+		smallCircle.printColor();
+		
+		System.out.printf("bigCircle\n"
+				+ "\tradius: %.0f\n\tcolor: ", 
+				bigCircle.calcArea());
+		bigCircle.printColor();
+		
+	}
+
+}

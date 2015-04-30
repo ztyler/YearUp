@@ -1,0 +1,25 @@
+
+public class Circle {
+	
+	double m_radius;
+	String m_color;
+	
+	Circle(double radius) {
+		m_radius = radius;
+		m_color = "grey";
+	}
+	
+	Circle(double radius, String color) {
+		m_radius = radius;
+		m_color = color;
+	}
+	
+	
+	static double calcArea() {
+		return Math.PI * m_radius * m_radius;
+	}
+	
+	static void printColor() {
+		System.out.println(m_color);
+	}
+}

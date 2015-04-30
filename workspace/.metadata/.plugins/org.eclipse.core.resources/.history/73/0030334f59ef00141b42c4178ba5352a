@@ -1,0 +1,22 @@
+
+public class Circle {
+	
+	double m_radius;
+	String m_color;
+	
+	Circle(double radius) {
+		m_radius = radius;
+		m_color = "grey";
+	}
+	
+	Circle(double radius, String color) {
+		m_radius = radius;
+		m_color = color;
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+}
