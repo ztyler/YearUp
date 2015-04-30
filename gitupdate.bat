@@ -1,0 +1,10 @@
+ECHO 4DD1NG t3h F1L3S
+git add -A
+
+ECHO C0MM1771NG t3h FILES
+git commit
+
+ECHO S3ND1NG FILEZ TO T3H INT3RW3BZ
+git push
+
+ECHO totes done
