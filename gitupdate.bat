@@ -1,3 +1,4 @@
+@ECHO OFF
 ECHO 4DD1NG t3h F1L3S
 git add -A
 
