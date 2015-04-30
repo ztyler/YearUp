@@ -1,4 +1,3 @@
-TITLE update-git
 @ECHO OFF
 CLS
 ECHO --------------------------------
@@ -13,7 +12,9 @@ ECHO --------------------------------
 ECHO COMMITTING CHANGES
 ECHO --------------------------------
 
-git commit
+set /p message="Enter commit message: "
+
+git commit -m message
 
 ECHO --------------------------------
 ECHO SENDING FILES TO GITHUB.COM
