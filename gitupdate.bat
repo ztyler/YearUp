@@ -19,4 +19,6 @@ ECHO SENDING FILES TO GITHUB.COM
 ECHO --------------------------------
 git push
 
+ECHO --------------------------------
 ECHO done!
+ECHO --------------------------------
