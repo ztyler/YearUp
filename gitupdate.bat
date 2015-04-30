@@ -1,4 +1,4 @@
-set PATH=%PATH%;C:\DRR\CMD
+TITLE update-git
 @ECHO OFF
 CLS
 ECHO --------------------------------
