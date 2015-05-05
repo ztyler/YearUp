@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the word/phrase: ");
+		String original = input.nextLine(),
+				reverse = "";
+		
+		int length = original.length() - 1;
+		int n = length;
+		
+		for (int i = n; i >= 0; i--) {
+			
+			reverse += original.charAt(i);
+			
+		}
+		
+		for (int i = 0; i <= length; i++) {
+			System.out.printf("%d:\t%s\t%s\n", 
+					i, 
+					original.charAt(i), 
+					reverse.charAt(i));
+		}
+		System.out.println(reverse);
+	}
+
+}
