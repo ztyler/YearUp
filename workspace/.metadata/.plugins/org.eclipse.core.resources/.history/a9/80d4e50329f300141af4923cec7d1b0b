@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		String test = ScanIn("this is a test: ");
+		System.out.print(test);
+
+	}
+	
+	static String ScanIn(String prompt) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print(prompt);
+		return scan.nextLine();
+	}
+
+}
