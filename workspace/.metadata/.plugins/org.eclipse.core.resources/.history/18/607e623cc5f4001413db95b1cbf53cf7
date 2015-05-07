@@ -8,15 +8,15 @@ public class Main {
 		
 		//print smallCircle vars
 		System.out.printf("smallCircle\n"
-				+ "\tradius: %.2f\n\tcolor: %s\n", 
-				smallCircle.calcArea(),
-				smallCircle.m_color);
+				+ "\tradius: %.2f\n\tcolor: ", 
+				smallCircle.calcArea());
+		smallCircle.printColor();
 		
 		//print bigCircle vars
 		System.out.printf("bigCircle\n"
-				+ "\tradius: %.2f\n\tcolor: %s\n", 
-				bigCircle.calcArea(),
-				bigCircle.m_color);
+				+ "\tradius: %.2f\n\tcolor: ", 
+				bigCircle.calcArea());
+		//bigCircle.printColor();
 
 		
 	}
