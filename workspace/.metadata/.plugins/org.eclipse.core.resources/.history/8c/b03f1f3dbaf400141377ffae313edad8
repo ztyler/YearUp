@@ -31,4 +31,5 @@ public class Main {
 				reverse,
 				reverse.equals(original));
 	}
+
 }
