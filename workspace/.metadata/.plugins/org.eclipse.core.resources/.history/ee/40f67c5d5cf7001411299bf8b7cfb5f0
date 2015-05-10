@@ -1,0 +1,22 @@
+import static java.lang.System.out;
+
+public class Fabric {
+
+	public static void main(String[] args) {
+		
+		Atom element = new Atom(1, 0, 1);
+		
+		out.printf("Name:\1t%s\n"
+				+ "Symbol:\1t%s\n"
+				+ "Isotope:\1t%b\n"
+				+ "Ion:\1t%b\n"
+				+ "Charge:\1t%d\n",
+				element.name,
+				element.symbol,
+				element.isIsotope,
+				element.isIon,
+				element.charge);
+		
+	}
+
+}

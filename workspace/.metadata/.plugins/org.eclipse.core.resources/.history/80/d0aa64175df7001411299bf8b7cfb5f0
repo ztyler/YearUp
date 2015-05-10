@@ -6,5 +6,8 @@ public class Fabric {
 		
 		Atom element = new Atom(1, 0, 2);
 		
+		out.println("Name\tSymbol\tIsotope\tIon\tCharge");
+		
 	}
+
 }

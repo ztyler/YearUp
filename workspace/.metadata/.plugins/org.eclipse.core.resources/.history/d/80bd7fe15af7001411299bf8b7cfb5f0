@@ -1,0 +1,17 @@
+import static java.lang.System.out;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Fabric {
+
+	public static void main(String[] args) {
+		
+		Map elements = new HashMap<Integer, String>();
+		
+		elements.put(1, "test");
+		
+		out.println(elements.get(1));
+	}
+
+}

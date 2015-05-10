@@ -1,0 +1,20 @@
+import java.util.HashMap;
+import java.util.Map;
+public class Atom {
+	static int protons, neutrons, electrons;
+	static String name;
+	
+	Map elements = new HashMap<Integer, String>();
+	
+	newlist = elements.put(1, "test");
+	
+	Atom(int p, int n, int e) {
+		protons = p;
+		neutrons = n;
+		electrons = e;
+	}
+	
+	void setName(int atomicNum) {
+		
+	}
+}

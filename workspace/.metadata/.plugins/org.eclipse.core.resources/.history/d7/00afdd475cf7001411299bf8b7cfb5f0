@@ -4,7 +4,10 @@ public class Fabric {
 
 	public static void main(String[] args) {
 		
-		Atom element = new Atom(1, 0, 2);
+		Atom element = new Atom(1, 0, 1);
+		
+		out.println(element.name);
 		
 	}
+
 }
