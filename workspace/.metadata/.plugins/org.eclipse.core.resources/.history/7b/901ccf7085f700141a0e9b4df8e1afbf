@@ -13,6 +13,12 @@ public class Atom {
 	}
 	
 	private void SetID() {
-		
+		if (protons == 1) {
+			name = "hydrogen";
+			symbol = "H";
+			if (neutrons > 0) {
+				isIsotope = true;
+			}
+		}
 	}
 }

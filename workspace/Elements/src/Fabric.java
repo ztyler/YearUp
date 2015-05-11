@@ -1,10 +1,17 @@
 import static java.lang.System.out;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Fabric {
-
 	public static void main(String[] args) {
 		
-		Atom element = new Atom(1, 0, 2);
 		
+		
+	}
+	Object ElementList() {
+		
+		Map<Integer, String[][]> elements = new HashMap<Integer, String[][]>();
+		
+		return elements;
 	}
 }
