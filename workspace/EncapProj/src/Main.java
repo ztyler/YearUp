@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Person Zach = new Person("Zach", "555-9050", "1686 Some Rd, Atlanta, GA", 22);
 		
 		System.out.printf("NAME:\n%s\n\n"
@@ -19,6 +19,7 @@ public class Main {
 		System.out.printf("%s's new age is %d\n",
 				Zach.getName(),
 				Zach.getAge());
+		
 	}
 
 }

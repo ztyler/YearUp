@@ -13,12 +13,6 @@ public class Atom {
 	}
 	
 	private void SetID() {
-		if (protons == 1) {
-			name = "hydrogen";
-			symbol = "H";
-		}
-		else if (protons == 2) {
-			
-		}
+		
 	}
 }
