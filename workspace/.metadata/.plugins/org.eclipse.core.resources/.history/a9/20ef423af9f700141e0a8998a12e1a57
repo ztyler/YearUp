@@ -17,8 +17,5 @@ public class Atom {
 			name = "hydrogen";
 			symbol = "H";
 		}
-		else if (protons == 2) {
-			
-		}
 	}
 }
