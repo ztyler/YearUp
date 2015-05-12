@@ -1,0 +1,18 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person Zach = new Person("Zach", "555-9050", "1686 Some Rd, Atlanta, GA", 22);
+		
+		System.out.printf("Name:%4s\n"
+				+ "Phone:%4s\n"
+				+ "Address:%4s\n"
+				+ "Age:%4d\n",
+				Zach.getName(),
+				Zach.getPhoneNum(),
+				Zach.getAddress(),
+				Zach.getAge());
+	}
+
+}
