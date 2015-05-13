@@ -3,16 +3,9 @@ public class Atom {
 	String name, symbol;
 	boolean isIon = false, isIsotope = false;
 	
-	Atom(int p, int n, int e) {
+	Atom(int p) {
 		protons = p;
-		neutrons = n;
-		electrons = e;
-		SetID();
-		charge = protons - electrons;
-		if (charge != 0) isIon = true;
-	}
-	
-	private void SetID() {
-		
+		name = Main.m_elements[protons - 1][1];
+		symbol = Main.m_elements[protons - 1][2];
 	}
 }

@@ -1,13 +1,54 @@
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import static java.lang.System.out;
 
-public class Main {
 
-	public static void main(String[] args) {
+public class Main  {
+	
+	static String[][] m_elements;
+	
+	public static void main(String[] args) throws Exception {
 		
-		Atom newAtom = new Atom(1, 0, 2);
+		m_elements = loadElements();
 		
-		System.out.println(newAtom.name);
-		System.out.println(newAtom.isIsotope);
-
+		Atom element = new Atom(11);
+		
+		out.println(element.name);
+		out.println(element.symbol);
+		
 	}
-
+	
+	static String[][] loadElements() throws Exception {
+		/*Converts elements.txt into a two dimensional array
+		 * for each element in 1st dimension:
+		 * [0]: atomic number
+		 * [1]: name
+		 * [2]: symbol
+		 */
+		
+		File fileElements = new File("C:\\Sandbox\\YearUp\\workspace\\"
+				+ "Elements\\src\\elements.txt");
+		Scanner scanElements = new Scanner(fileElements);
+		
+		List<String> temp = new ArrayList<String>();
+		
+		while(scanElements.hasNextLine()) {
+			String line = scanElements.nextLine();
+			temp.add(line);
+		}
+		
+		scanElements.close();
+		
+		String[] x = temp.toArray(new String[temp.size()]);
+		String[][] y = new String[x.length][3];
+		
+		for (int i = 0; i < x.length; i++) {
+			String[] elementInfo = x[i].split("\t");
+			y[i] = elementInfo;
+		}
+		
+		return y;
+	}
 }

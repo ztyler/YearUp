@@ -1,0 +1,26 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
+public class Atom {
+	int protons, neutrons, electrons, charge;
+	String name, symbol;
+	boolean isIon = false, isIsotope = false;
+	
+	Atom(int p, int n, int e) {
+		protons = p;
+		neutrons = n;
+		electrons = e;
+		SetID();
+		charge = protons - electrons;
+		if (charge != 0) {
+			isIon = true;
+		}
+	}
+	
+	private void SetID() {
+		
+		FileReader elementsText = new FileReader("C:\\Sandbox\\YearUp\\workspace\\Elements\\src\\elements.txt");
+		
+	}
+}

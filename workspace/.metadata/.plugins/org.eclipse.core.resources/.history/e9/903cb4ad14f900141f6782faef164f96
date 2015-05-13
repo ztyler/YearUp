@@ -1,0 +1,34 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main  {
+	
+	public static void main(String[] args) throws Exception {
+	
+		String[] m_elements = loadElements();
+		System.out.println("Done");
+	}
+	
+	static String[] loadElements() throws Exception {
+		File fileElements = new File("C:\\Sandbox\\YearUp\\workspace\\"
+				+ "Elements\\src\\elements.txt");
+		
+		List<String[]> List = new ArrayList<String[]>();
+	
+		Scanner scanElements = new Scanner(fileElements);
+		
+		while(scanElements.hasNextLine()) {
+			String[] line = (scanElements.nextLine()).split("\t");
+			List.add(line);
+		}
+		
+		scanElements.close();
+		
+		String[] a = new String[List.size()];
+		String[] x = List.toArray(a);
+		return x;
+	}
+}

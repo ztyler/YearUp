@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+
+public class Atom {
+	int protons, neutrons, electrons, charge;
+	String name, symbol;
+	boolean isIon = false, isIsotope = false;
+	
+	Atom(int p, int n, int e) {
+		protons = p;
+		neutrons = n;
+		electrons = e;
+		charge = protons - electrons;
+		if (charge != 0) {
+			isIon = true;
+		}
+	}
+	
+	private void SetID() {
+		Scanner file = new Scanner("C:\\Sandbox\\YearUp\\workspace\\"
+				+ "Elements\\src\\elements.txt");
+		while (file.hasNextLine()) {
+			out.println(file.nextLine());
+		}
+	}
+}

@@ -1,0 +1,18 @@
+public class Atom {
+	int protons, neutrons, electrons, charge;
+	String name, symbol;
+	boolean isIon = false, isIsotope = false;
+	
+	Atom(int p, int n, int e) {
+		protons = p;
+		neutrons = n;
+		electrons = e;
+		charge = protons - electrons;
+		if (charge != 0) {
+			isIon = true;
+		}
+	}
+	SetID
+	
+
+}

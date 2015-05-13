@@ -1,0 +1,17 @@
+public class Atom {
+	int protons, neutrons, electrons, charge;
+	String name, symbol;
+	boolean isIon = false, isIsotope = false;
+	
+	Atom(int p) {
+		protons = p;
+		setID();
+	}
+	
+	private void setID() {
+		name = Main.m_elements[protons][1];
+		symbol = Main.m_elements[protons][2];
+	}
+	
+
+}
