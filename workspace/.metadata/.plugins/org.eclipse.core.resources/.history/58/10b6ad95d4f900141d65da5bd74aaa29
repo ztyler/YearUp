@@ -12,8 +12,8 @@ public class Atom {
 		setID();
 	}
 	
-	//Ion
-	Atom (int p, int e) {
+	//Ion || Isotope
+	Atom (int p, int y, boolean ion) {
 		protons = p;
 		electrons = e;
 		charge = protons - electrons;
