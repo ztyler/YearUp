@@ -9,18 +9,16 @@ import static java.lang.System.out;
 
 public class Main  {
 	
-	static String[][] m_elements;
+	static String[][] elements;
 	
 	public static void main(String[] args) throws Exception {
 		
-		m_elements = loadElements();
+		elements = loadElements();
 		
-		Atom element = new Atom(92);
+		Atom element = new Atom(97);
 		
 		out.println(element.name);
 		out.println(element.symbol);
-		out.println(element.charge);
-		out.println(element.electronConfig);
 	}
 	
 	static String[][] loadElements() throws Exception {

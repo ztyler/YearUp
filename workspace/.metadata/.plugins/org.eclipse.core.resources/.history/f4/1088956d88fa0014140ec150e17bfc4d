@@ -1,0 +1,25 @@
+public class Atom {
+	int protons, neutrons, electrons, charge;
+	int index;
+	String name, symbol, electronConfig;
+	boolean isIon = false, isIsotope = false;
+	
+	Atom(int p) {
+		protons = p;
+		electrons = sumElectrons();
+		
+		setID();
+	}
+	
+	private void setID() {
+		index = protons - 1;
+		name = Main.elements[index][1];
+		symbol = Main.elements[index][2];
+		electronConfig = Main.elements[index][3];
+	}
+	
+	private int sumElectrons() {
+		String shells = Main.elements[index][3];
+		return 0;
+	}
+}
