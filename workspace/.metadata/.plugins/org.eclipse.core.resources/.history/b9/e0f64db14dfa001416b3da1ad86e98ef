@@ -3,8 +3,6 @@ public class Atom {
 	String name, symbol;
 	boolean isIon = false, isIsotope = false;
 	
-	
-	
 	//Regular
 	Atom(int p) {
 		protons = p;

@@ -1,63 +1,63 @@
-1	hydrogen	H
-2	helium	He
-3	lithium	Li
-4	beryllium	Be
-5	boron	B
-6	carbon	C
-7	nitrogen	N
-8	oxygen	O
-9	fluorine	F
-10	neon	Ne
-11	sodium	Na
-12	magnesium	Mg
-13	aluminium	Al
-14	silicon	Si
-15	phosphorus	P
-16	sulfur	S
-17	chlorine	Cl
-18	argon	Ar
-19	potassium	K
-20	calcium	Ca
-21	scandium	Sc
-22	titanium	Ti
-23	vanadium	V
-24	chromium	Cr
-25	manganese	Mn
-26	iron	Fe
-27	cobalt	Co
-28	nickel	Ni
-29	copper	Cu
-30	zinc	Zn
-31	gallium	Ga
-32	germanium	Ge
-33	arsenic	As
-34	selenium	Se
-35	bromine	Br
-36	krypton	Kr
-37	rubidium	Rb
-38	strontium	Sr
-39	yttrium	Y
-40	zirconium	Zr
-41	niobium	Nb
-42	molybdenum	Mo
-43	technetium	Tc
-44	ruthenium	Ru
-45	rhodium	Rh
-46	palladium	Pd
-47	silver	Ag
-48	cadmium	Cd
-49	indium	In
-50	tin	Sn
-51	antimony	Sb
-52	tellurium	Te
-53	iodine	I
-54	xenon	Xe
-55	caesium	Cs
-56	barium	Ba
-57	lanthanum	La
-58	cerium	Ce
-59	praseodymium	Pr
-60	neodymium	Nd
+1	hydrogen	H	1
+2	helium	He	2
+3	lithium	Li	2 1
+4	beryllium	Be	2 2
+5	boron	B	2 3
+6	carbon	C	2 4
+7	nitrogen	N	2 5
+8	oxygen	O	2 6
+9	fluorine	F	2 7
+10	neon	Ne	2 8
+11	sodium	Na	2 8 1
+12	magnesium	Mg	2 8 2
+13	aluminium	Al	2 8 3
+14	silicon	Si	2 8 4
+15	phosphorus	P	2 8 5
+16	sulfur	S	2 8 6
+17	chlorine	Cl	2 8 7
+18	argon	Ar	2 8 8
+19	potassium	K	2 8 8 1
+20	calcium	Ca	2 8 8 2
+21	scandium	Sc	2 8 9 2
+22	titanium	Ti	2 8 10 2
+23	vanadium	V	2 8 11 2
+24	chromium	Cr	2 8 13 1
+25	manganese	Mn	2 8 13 2
+26	iron	Fe	2 8 14 2
+27	cobalt	Co	2 8 15 2
+28	nickel	Ni	2 8 16 2
+29	copper	Cu	2 8 18 1
+30	zinc	Zn	2 8 18 2
+31	gallium	Ga	2 8 18 3
+32	germanium	Ge	2 8 18 4
+33	arsenic	As	2 8 18 5
+34	selenium	Se	2 8 18 6
+35	bromine	Br	2 8 18 7
+36	krypton	Kr	2 8 18 8
+37	rubidium	Rb	2 8 18 8 1
+38	strontium	Sr	2 8 18 8 2
+39	yttrium	Y	2 8 18 9 2	
+40	zirconium	Zr 2 8 18 10 2
+41	niobium	Nb	2 8 18 12 1
+42	molybdenum	Mo	2 8 18 13 1
+43	technetium	Tc	2 8 13 2
+44	ruthenium	Ru	2 8 18 15 1
+45	rhodium	Rh	2 8 18 16 1
+46	palladium	Pd	2 8 18 18
+47	silver	Ag	2 8 18 18 1
+48	cadmium	Cd	2 8 18 18 2
+49	indium	In	2 8 18 18 3
+50	tin	Sn	2 8 18 18 4
+51	antimony	Sb	2 8 18 18 5
+52	tellurium	Te	2 8 18 18 6
+53	iodine	I	2 8 18 18 7
+54	xenon	Xe	2 8 18 18 8
+55	caesium	Cs	2 8 18 18 8 1
+56	barium	Ba	2 8 18 18 8 2
+57	lanthanum	La	2 18 18 9 2
+58	cerium	Ce	2 18 19 9 2
+59	praseodymium	Pr	2 8 18 21 8 2
+60	neodymium	Nd	
 61	promethium	Pm
 62	samarium	Sm
 63	europium	Eu
