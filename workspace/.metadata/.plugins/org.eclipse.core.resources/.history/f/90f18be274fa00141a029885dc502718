@@ -15,12 +15,12 @@ public class Main  {
 		
 		m_elements = loadElements();
 		
-		Atom element = new Atom(92);
+		Atom element = new Atom(1);
 		
 		out.println(element.name);
 		out.println(element.symbol);
 		out.println(element.charge);
-		out.println(element.electronConfig);
+		
 	}
 	
 	static String[][] loadElements() throws Exception {
@@ -44,10 +44,10 @@ public class Main  {
 		scanElements.close();
 		
 		String[] x = temp.toArray(new String[temp.size()]);
-		String[][] y = new String[x.length][4];
+		String[][] y = new String[x.length][3];
 		
 		for (int i = 0; i < x.length; i++) {
-			String[] elementInfo = x[i].split("\\s+");
+			String[] elementInfo = x[i].split("\t");
 			y[i] = elementInfo;
 		}
 		

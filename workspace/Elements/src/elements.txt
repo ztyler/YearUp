@@ -1,146 +1,146 @@
-1	hydrogen	H	1
-2	helium		He	2
-3	lithium		Li	2 1
-4	beryllium	Be	2 2
-5	boron		B	2 3
-6	carbon		C	2 4
-7	nitrogen	N	2 5
-8	oxygen		O	2 6
-9	fluorine	F	2 7
-10	neon		Ne	2 8
-11	sodium		Na	2 8 1
-12	magnesium	Mg	2 8 2
-13	aluminium	Al	2 8 3
-14	silicon		Si	2 8 4
-15	phosphorus	P	2 8 5
-16	sulfur		S	2 8 6
-17	chlorine	Cl	2 8 7
-18	argon		Ar	2 8 8
-19	potassium	K	2 8 8 1
-20	calcium		Ca	2 8 8 2
-21	scandium	Sc	2 8 9 2
-22	titanium	Ti	2 8 10 2
-23	vanadium	V	2 8 11 2
-24	chromium	Cr	2 8 13 1
-25	manganese	Mn	2 8 13 2
-26	iron		Fe	2 8 14 2
-27	cobalt		Co	2 8 15 2
-28	nickel		Ni	2 8 16 2
-29	copper		Cu	2 8 18 1
-30	zinc		Zn	2 8 18 2
-31	gallium		Ga	2 8 18 3
-32	germanium	Ge	2 8 18 4
-33	arsenic		As	2 8 18 5
-34	selenium	Se	2 8 18 6
-35	bromine		Br	2 8 18 7
-36	krypton		Kr	2 8 18 8
-37	rubidium	Rb	2 8 18 8 1
-38	strontium	Sr	2 8 18 8 2
-39	yttrium		Y	2 8 18 9 2	
-40	zirconium	Zr	2 8 18 10 2
-41	niobium		Nb	2 8 18 12 1
-42	molybdenum	Mo	2 8 18 13 1
-43	technetium	Tc	2 8 18 13 2
-44	ruthenium	Ru	2 8 18 15 1
-45	rhodium		Rh	2 8 18 16 1
-46	palladium	Pd	2 8 18 18
-47	silver		Ag	2 8 18 18 1
-48	cadmium		Cd	2 8 18 18 2
-49	indium		In	2 8 18 18 3
-50	tin		Sn	2 8 18 18 4
-51	antimony	Sb	2 8 18 18 5
-52	tellurium	Te	2 8 18 18 6
-53	iodine		I	2 8 18 18 7
-54	xenon		Xe	2 8 18 18 8
-55	caesium		Cs	2 8 18 18 8 1
-56	barium		Ba	2 8 18 18 8 2
-57	lanthanum	La	2 8 18 18 9 2
-58	cerium		Ce	2 8 18 19 9 2
-59	praseodymium	Pr	2 8 18 21 8 2
-60	neodymium	Nd	2 8 18 22 8 2
-61	promethium	Pm	2 8 18 23 8 2
-62	samarium	Sm	2 8 18 24 8 2
-63	europium	Eu	2 8 18 25 8 2
-64	gadolinium	Gd	2 8 18 25 9 2
-65	terbium		Tb	2 8 18 27 8 2
-66	dysprosium	Dy	2 8 18 28 8 2
-67	holmium		Ho	2 8 18 29 8 2
-68	erbium		Er	2 8 18 30 8 2
-69	thulium		Tm	2 8 18 31 8 2
-70	ytterbium	Yb	2 8 18 32 8 2
-71	lutetium	Lu	2 8 18 32 9 2
-72	hafnium		Hf	2 8 18 32 10 2
-73	tantalum	Ta	2 8 18 32 11 2
-74	tungsten	W	2 8 18 32 12 2
-75	rhenium		Re	2 8 18 32 13 2
-76	osmium		Os	2 8 18 32 14 2
-77	iridium		Ir	2 8 18 32 15 2
-78	platinum	Pt	2 8 18 32 17 1
-79	gold		Au	2 8 18 32 18 1	
-80	mercury		Hg	2 8 18 32 18 2
-81	thallium	Tl	2 8 18 32 18 3
-82	lead		Pb	2 8 18 32 18 4
-83	bismuth		Bi	2 8 18 32 18 5
-84	polonium	Po	2 8 18 32 18 6
-85	astatine	At	2 8 18 32 18 7
-86	radon		Rn	2 8 18 32 18 8
-87	francium	Fr	2 8 18 32 18 8 1
-88	radium		Ra	2 8 18 32 18 8 2
-89	actinium	Ac	2 8 18 32 18 9 2
-90	thorium		Th	2 8 18 32 18 10 2
-91	protactinium	Pa	2 8 18 32 20 9 2
-92	uranium		U	2 8 18 32 21 9 2
-93	neptunium	Np	2 8 18 32 22 9 2
-94	plutonium	Pu	2 8 18 32 24 8 2
-95	americium	Am	2 8 18 32 25 8 2
-96	curium		Cm	2 8 18 32 25 9 2
-97	berkelium	Bk	2 8 18 32 27 8 2
-98	californium	Cf	2 8 18 32 28 8 2
-99	einsteinium	Es	2 8 18 32 29 8 2
-100	fermium		Fm	2 8 18 32 30 8 2
-101	mendelevium	Md	2 8 18 32 31 8 2
-102	nobelium	No	2 8 18 32 32 8 2
-103	lawrencium	Lr	2 8 18 32 32 8 3
-104	rutherfordium	R	2 8 18 32 32 10 2
-105	dubnium		Db	2 8 18 32 32 11 2
-106	seaborgium	Sg	2 8 18 32 32 12 2
-107	bohrium		Bh	2 8 18 32 32 13 2
-108	hassium		Hs	2 8 18 32 32 14 2
-109	meitnerium	Mt	2 8 18 32 32 15 2
-110	darmstadtium	Ds	2 8 18 32 32 16 2
-111	roentgenium	Rg	2 8 18 32 32 17 2
-112	copernicum	Cn	2 8 18 32 32 18 2
-113	ununtrium	Uut	2 8 18 32 32 18 3
-114	flerovium	Fl	2 8 18 32 32 18 4	
-115	ununpentium	Uup	2 8 18 32 32 18 5
-116	livermorium	Lv	2 8 18 32 32 18 6
-117	ununseptium	Uus	2 8 18 32 32 18 7	
-118	ununoctium	Uuo	2 8 18 32 32 18 8
-119	ununennium	Uue	-1
-120	unbinilium	Ubn	-1
-121	unbiunium	Ubu	-1
-122	unbibium	Uuo	-1
-123	unbitirium	Ubt	-1
-124	unbiquadium	Ubq	-1
-125	unbipentium	Ubp	-1	
-126	unbihexium	Ubh	-1		
-127	unbiseptium	Ubs	-1
-128	unbioctium	Ubo	-1
-129	unbiennium	Ube	-1
-130	untrinilium	Utn	-1
-131	untriunium	Utu	-1
-132	untribium	Utb	-1
-133	untritrium	Utt	-1
+1	hydrogen		H	1
+2	helium			He	2
+3	lithium			Li	2-1
+4	beryllium		Be	2-2
+5	boron			B	2-3
+6	carbon			C	2-4
+7	nitrogen		N	2-5
+8	oxygen			O	2-6
+9	fluorine		F	2-7
+10	neon			Ne	2-8
+11	sodium			Na	2-8-1
+12	magnesium		Mg	2-8-2
+13	aluminium		Al	2-8-3
+14	silicon			Si	2-8-4
+15	phosphorus		P	2-8-5
+16	sulfur			S	2-8-6
+17	chlorine		Cl	2-8-7
+18	argon			Ar	2-8-8
+19	potassium		K	2-8-8-1
+20	calcium			Ca	2-8-8-2
+21	scandium		Sc	2-8-9-2
+22	titanium		Ti	2-8-10-2
+23	vanadium		V	2-8-11-2
+24	chromium		Cr	2-8-13-1
+25	manganese		Mn	2-8-13-2
+26	iron			Fe	2-8-14-2
+27	cobalt			Co	2-8-15-2
+28	nickel			Ni	2-8-16-2
+29	copper			Cu	2-8-18-1
+30	zinc			Zn	2-8-18-2
+31	gallium			Ga	2-8-18-3
+32	germanium		Ge	2-8-18-4
+33	arsenic			As	2-8-18-5
+34	selenium		Se	2-8-18-6
+35	bromine			Br	2-8-18-7
+36	krypton			Kr	2-8-18-8
+37	rubidium		Rb	2-8-18-8-1
+38	strontium		Sr	2-8-18-8-2
+39	yttrium			Y	2-8-18-9-2	
+40	zirconium		Zr	2-8-18-10-2
+41	niobium			Nb	2-8-18-12-1
+42	molybdenum		Mo	2-8-18-13-1
+43	technetium		Tc	2-8-18-13-2
+44	ruthenium		Ru	2-8-18-15-1
+45	rhodium			Rh	2-8-18-16-1
+46	palladium		Pd	2-8-18-18
+47	silver			Ag	2-8-18-18-1
+48	cadmium			Cd	2-8-18-18-2
+49	indium			In	2-8-18-18-3
+50	tin				Sn	2-8-18-18-4
+51	antimony		Sb	2-8-18-18-5
+52	tellurium		Te	2-8-18-18-6
+53	iodine			I	2-8-18-18-7
+54	xenon			Xe	2-8-18-18-8
+55	caesium			Cs	2-8-18-18-8-1
+56	barium			Ba	2-8-18-18-8-2
+57	lanthanum		La	2-8-18-18-9-2
+58	cerium			Ce	2-8-18-19-9-2
+59	praseodymium	Pr	2-8-18-21-8-2
+60	neodymium		Nd	2-8-18-22-8-2
+61	promethium		Pm	2-8-18-23-8-2
+62	samarium		Sm	2-8-18-24-8-2
+63	europium		Eu	2-8-18-25-8-2
+64	gadolinium		Gd	2-8-18-25-9-2
+65	terbium			Tb	2-8-18-27-8-2
+66	dysprosium		Dy	2-8-18-28-8-2
+67	holmium			Ho	2-8-18-29-8-2
+68	erbium			Er	2-8-18-30-8-2
+69	thulium			Tm	2-8-18-31-8-2
+70	ytterbium		Yb	2-8-18-32-8-2
+71	lutetium		Lu	2-8-18-32-9-2
+72	hafnium			Hf	2-8-18-32-10-2
+73	tantalum		Ta	2-8-18-32-11-2
+74	tungsten		W	2-8-18-32-12-2
+75	rhenium			Re	2-8-18-32-13-2
+76	osmium			Os	2-8-18-32-14-2
+77	iridium			Ir	2-8-18-32-15-2
+78	platinum		Pt	2-8-18-32-17-1
+79	gold			Au	2-8-18-32-18-1	
+80	mercury			Hg	2-8-18-32-18-2
+81	thallium		Tl	2-8-18-32-18-3
+82	lead			Pb	2-8-18-32-18-4
+83	bismuth			Bi	2-8-18-32-18-5
+84	polonium		Po	2-8-18-32-18-6
+85	astatine		At	2-8-18-32-18-7
+86	radon			Rn	2-8-18-32-18-8
+87	francium		Fr	2-8-18-32-18-8-1
+88	radium			Ra	2-8-18-32-18-8-2
+89	actinium		Ac	2-8-18-32-18-9-2
+90	thorium			Th	2-8-18-32-18-10-2
+91	protactinium	Pa	2-8-18-32-20-9-2
+92	uranium			U	2-8-18-32-21-9-2
+93	neptunium		Np	2-8-18-32-22-9-2
+94	plutonium		Pu	2-8-18-32-24-8-2
+95	americium		Am	2-8-18-32-25-8-2
+96	curium			Cm	2-8-18-32-25-9-2
+97	berkelium		Bk	2-8-18-32-27-8-2
+98	californium		Cf	2-8-18-32-28-8-2
+99	einsteinium		Es	2-8-18-32-29-8-2
+100	fermium			Fm	2-8-18-32-30-8-2
+101	mendelevium		Md	2-8-18-32-31-8-2
+102	nobelium		No	2-8-18-32-32-8-2
+103	lawrencium		Lr	2-8-18-32-32-8-3
+104	rutherfordium	R	2-8-18-32-32-10-2
+105	dubnium			Db	2-8-18-32-32-11-2
+106	seaborgium		Sg	2-8-18-32-32-12-2
+107	bohrium			Bh	2-8-18-32-32-13-2
+108	hassium			Hs	2-8-18-32-32-14-2
+109	meitnerium		Mt	2-8-18-32-32-15-2
+110	darmstadtium	Ds	2-8-18-32-32-16-2
+111	roentgenium		Rg	2-8-18-32-32-17-2
+112	copernicum		Cn	2-8-18-32-32-18-2
+113	ununtrium		Uut	2-8-18-32-32-18-3
+114	flerovium		Fl	2-8-18-32-32-18-4	
+115	ununpentium		Uup	2-8-18-32-32-18-5
+116	livermorium		Lv	2-8-18-32-32-18-6
+117	ununseptium		Uus	2-8-18-32-32-18-7	
+118	ununoctium		Uuo	2-8-18-32-32-18-8
+119	ununennium		Uue	-1
+120	unbinilium		Ubn	-1
+121	unbiunium		Ubu	-1
+122	unbibium		Uuo	-1
+123	unbitirium		Ubt	-1
+124	unbiquadium		Ubq	-1
+125	unbipentium		Ubp	-1	
+126	unbihexium		Ubh	-1		
+127	unbiseptium		Ubs	-1
+128	unbioctium		Ubo	-1
+129	unbiennium		Ube	-1
+130	untrinilium		Utn	-1
+131	untriunium		Utu	-1
+132	untribium		Utb	-1
+133	untritrium		Utt	-1
 134	untriquadium	Utq	-1
 135	untripentium	Utp	-1
-136	untrihexium	Uth	-1
+136	untrihexium		Uth	-1
 137	untriseptium	Uts	-1
-138	untrioctium	Uto	-1
-139	untriennium	Ute	-1
+138	untrioctium		Uto	-1
+139	untriennium		Ute	-1
 140	unquadnilium	Uqn	-1
-141	unquadunium	Uqu	-1
-142	unquadbium	Uqb	-1
-143	unquadtrium	Uqt	-1
+141	unquadunium		Uqu	-1
+142	unquadbium		Uqb	-1
+143	unquadtrium		Uqt	-1
 144	unquadquadium	Uqq	-1
 145	unquadpentium	Uqp	-1
 146	unquadhexium	Uqh	-1
@@ -148,25 +148,25 @@
 148	unquadoctium	Uqo	-1
 149	unquadennium	Uqe	-1
 150	unpentnilium	Upn	-1
-151	unpentunium	Upu	-1
-152	unpentbium	Upb	-1
-153	unpenttrium	Upt	-1
+151	unpentunium		Upu	-1
+152	unpentbium		Upb	-1
+153	unpenttrium		Upt	-1
 154	unpentquadium	Upq	-1
 155	unpentpentium	Upp	-1
 156	unpenthexium	Uph	-1
 157	unpentseptium	Ups	-1
 158	unpentoctium	Upo	-1
 159	unpentennium	Upe	-1
-160	unhexnilium	Uhn	-1
-161	unhexunium	Uhu	-1
-162	unhexbium	Uhb	-1
-163	unhextrium	Uht	-1
+160	unhexnilium		Uhn	-1
+161	unhexunium		Uhu	-1
+162	unhexbium		Uhb	-1
+163	unhextrium		Uht	-1
 164	unhexquadium	Uhq	-1
 165	unhexpentium	Uhp	-1
-166	unhexhexium	Uhh	-1
+166	unhexhexium		Uhh	-1
 167	unhexseptium	Uhs	-1
-168	unhexoctium	Uho	-1
-169	unhexennium	Uhe	-1
+168	unhexoctium		Uho	-1
+169	unhexennium		Uhe	-1
 170	unseptnilium	Usn	-1
-171	unseptunium	Usu	-1
-172	unseptbium	Usb	-1
+171	unseptunium		Usu	-1
+172	unseptbium		Usb	-1

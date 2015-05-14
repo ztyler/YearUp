@@ -15,7 +15,7 @@ public class Main  {
 		
 		m_elements = loadElements();
 		
-		Atom element = new Atom(92);
+		Atom element = new Atom(118);
 		
 		out.println(element.name);
 		out.println(element.symbol);

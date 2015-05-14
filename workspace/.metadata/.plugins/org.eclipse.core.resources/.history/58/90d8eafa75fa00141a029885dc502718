@@ -3,10 +3,24 @@ public class Atom {
 	String name, symbol, electronConfig;
 	boolean isIon = false, isIsotope = false;
 	
+	//Regular
 	Atom(int p) {
 		protons = p;
 		electrons = p;
 		charge = 0;
+		
+		setID();
+	}
+	
+	//Ion
+	Atom (int p, int e) {
+		protons = p;
+		electrons = e;
+		charge = protons - electrons;
+		
+		if (charge != 0) {
+			isIon = true;
+		}
 		
 		setID();
 	}
