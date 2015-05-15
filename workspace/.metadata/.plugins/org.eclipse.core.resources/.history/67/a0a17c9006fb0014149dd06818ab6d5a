@@ -12,10 +12,6 @@ public class Atom {
 		
 	}
 	
-	Atom(int p, int charge) {
-		createInfo(p);
-	}
-	
 	private void createInfo(int p) {
 		_protons = p;
 		_indexElementsList = _protons - 1;
@@ -23,6 +19,8 @@ public class Atom {
 		_symbol = Main.elements[_indexElementsList][2];
 		_electronConfig = Main.elements[_indexElementsList][3];
 		_shells = _electronConfig.split("-");
+		
+		//count electrons
 	}
 	
 	private void createElectrons() {
@@ -32,7 +30,5 @@ public class Atom {
 		}
 		_electrons = sum;
 	}
-	
-	
 	
 }

@@ -20,7 +20,6 @@ public class Main  {
 		
 		out.println(element._name);
 		out.println(element._symbol);
-		out.println(element._electrons);
 	}
 	
 	static String[][] loadElements() throws Exception {

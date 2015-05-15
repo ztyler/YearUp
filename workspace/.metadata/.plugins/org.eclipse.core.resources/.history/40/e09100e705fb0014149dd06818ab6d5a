@@ -18,9 +18,8 @@ public class Main  {
 		
 		Atom element = new Atom(97);
 		
-		out.println(element._name);
-		out.println(element._symbol);
-		out.println(element._electrons);
+		out.println(element.name);
+		out.println(element.symbol);
 	}
 	
 	static String[][] loadElements() throws Exception {
