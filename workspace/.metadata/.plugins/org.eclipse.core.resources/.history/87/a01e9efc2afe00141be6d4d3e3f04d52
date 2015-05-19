@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class DayOfWeek {
+	
+	public static void main(String[] args) {
+		String day;
+		do {
+			Scanner userInput = new Scanner(System.in);
+			System.out.print("Enter the day of the week: ");
+			day = userInput.nextLine();
+		}
+		while (EvalDay(day));
+	}
+	
+	static boolean EvalDay(String day) {
+		if (day.isEmpty()) {
+			System.out.println("Days no longer exist. Chaos and confusion\n");
+			return true;
+		}
+		return false;
+	}
+}
