@@ -11,6 +11,7 @@ public class DayOfWeek {
 			System.out.print("Enter the day of the week: ");
 			day = userInput.nextLine();
 		}
+		//loop if input is invalid
 		while (EvalDay(day));
 		
 		userInput.close();
@@ -18,14 +19,14 @@ public class DayOfWeek {
 	
 	static boolean EvalDay(String day) {
 		
-		//null or "" check. Feed "true" to do/while if true
+		//null or "" check. Feed "true" to do/while if true. Break the universe.
 		if (day.isEmpty() || day == null) {
 			System.out.println("Days no longer exist. Time isn't a thing. Chaos and confusion.\n");
 			return true;
 		}
 		
 		//change day to proper case
-		day = day.substring(0, 1).toUpperCase() + day.substring(1, day.length());
+		day = day.substring(0, 1).toUpperCase() + day.substring(1, day.length()).toLowerCase();
 		
 		//check for weekend.
 		if (day.equals("Saturday")
@@ -39,11 +40,11 @@ public class DayOfWeek {
 				|| day.equals("Tuesday")
 				|| day.equals("Wednesday")
 				|| day.equals("Thursday")
-				|| day.equals("Friday")){
+				|| day.equals("Friday")) {
 			
 			System.out.printf("It's %s. That's a weekday. Go to work.", day);
 		}
-		//if var day isn't really a day, feed true to do/while
+		//if String day isn't really a day of the week, call the user a liar and feed true to do/while
 		else {
 			System.out.println("That's not a day. You're a liar. Try again.\n");
 			return true;
