@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
+public class OddOrEven {
+
+	public static void main(String[] args) {
+		
+		Scanner numInput = new Scanner(System.in);
+		out.print("Enter a number: ");
+		
+		boolean validEntry;
+		String num;
+		
+		do {
+			if (numInput.hasNextDouble()) {
+				validEntry = true;
+				num = numInput.nextLine();
+				numInput.close();
+				
+				int lastValue = Integer.parseInt("" + num.charAt(num.length() - 1));
+				
+				switch (lastValue % 2) {
+				case (0):
+					out.println("Even");
+					break;
+				case (1):
+					out.println("Odd");
+				}
+				
+			}
+			
+			else {
+				out.println("Invalid entry");
+				validEntry = false;
+			}
+		}
+		while (validEntry);
+		
+	}
+
+}

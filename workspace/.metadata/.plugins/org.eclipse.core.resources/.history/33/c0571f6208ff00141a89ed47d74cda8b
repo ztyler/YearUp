@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+
+public class OddOrEven {
+
+	public static void main(String[] args) {
+		
+		Scanner numInput = new Scanner(System.in);
+		out.print("Enter a number: ");
+		
+		float num = 0;
+		
+		if (numInput.hasNextFloat()) {
+			num = numInput.nextFloat();
+			numInput.close();
+			
+			if (num % 2 == 0) {
+				out.println("Even");
+			}
+			
+			else if (num % 1 != 0) {
+				num = num - (int) num;
+				out.println(num);
+			}
+			
+			else {
+				out.println("Odd");
+			}
+		}
+		
+		else {
+			out.println("Invalid entry");
+		}
+		
+	}
+
+}
