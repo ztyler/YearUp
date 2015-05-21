@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import static java.lang.System.out;
 
 public class ChineseYear {
@@ -8,19 +7,14 @@ public class ChineseYear {
 
 	public static void main(String[] args) {
 		while (true) {
-			//open scanner
-			@SuppressWarnings("resource")
 			Scanner yearInput = new Scanner(System.in);
 			out.print("Enter Year: ");
 			
-			//test input
 			if (yearInput.hasNextInt()) {
 				int year = yearInput.nextInt();
-				
-				//check value
+				yearInput.close();
 				if (year >= s_minYear) {
 					EvalChineseYear(year);
-					yearInput.close();
 					break;
 				}
 			}
@@ -32,50 +26,45 @@ public class ChineseYear {
 	static void EvalChineseYear(int year) {
 		
 		int yearDiff = year - s_minYear;
-		String animal;
 		
 		switch (yearDiff % 12) {
 		case 0:
-			animal = "Rat";
+			out.printf("%d is the year of the %s", year, "Rat");
 			break;
 		case 1:
-			animal = "Ox";
+			out.printf("%d is the year of the %s", year, "Ox");
 			break;
 		case 2:
-			animal = "Tiger";
+			out.printf("%d is the year of the %s", year, "Tiger");
 			break;
 		case 3:
-			animal = "Rabbit";
+			out.printf("%d is the year of the %s", year, "Rabbit");
 			break;
 		case 4:
-			animal = "Dragon";
+			out.printf("%d is the year of the %s", year, "Dragon");
 			break;
 		case 5:
-			animal = "Snake";
+			out.printf("%d is the year of the %s", year, "Snake");
 			break;
 		case 6:
-			animal = "Horse";
+			out.printf("%d is the year of the %s", year, "Horse");
 			break;
 		case 7:
-			animal = "Sheep";
+			out.printf("%d is the year of the %s", year, "Sheep");
 			break;
 		case 8:
-			animal = "Monkey";
+			out.printf("%d is the year of the %s", year, "Monkey");
 			break;
 		case 9:
-			animal = "Rooster";
+			out.printf("%d is the year of the %s", year, "Rooster");
 			break;
 		case 10:
-			animal = "Dog";
+			out.printf("%d is the year of the %s", year, "Dog");
 			break;
 		case 11:
-			animal = "Pig";
+			out.printf("%d is the year of the %s", year, "Pig");
 			break;
-		default:
-			animal = "[YOU BROKE MATH]";
 		}
-		
-		out.printf("%d was the year of the %s.", year, animal);
 		
 		
 	}

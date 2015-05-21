@@ -224,12 +224,11 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_pDHdWPipEeSlitGdvFgLeA" elementId="org.eclipse.ui.editorss" selectedElement="_rTjV0P_JEeSa3MT_vGaT0A">
-      <children xsi:type="basic:PartSashContainer" xmi:id="_rTjV0P_JEeSa3MT_vGaT0A" selectedElement="_rseMIP_JEeSa3MT_vGaT0A" horizontal="true">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_rseMIP_JEeSa3MT_vGaT0A" containerData="3420" selectedElement="_pDIDOPipEeSlitGdvFgLeA">
+      <children xsi:type="basic:PartSashContainer" xmi:id="_rTjV0P_JEeSa3MT_vGaT0A" selectedElement="_rTjV0f_JEeSa3MT_vGaT0A" horizontal="true">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_rseMIP_JEeSa3MT_vGaT0A" containerData="3346" selectedElement="_pDIDOPipEeSlitGdvFgLeA">
           <children xsi:type="basic:PartStack" xmi:id="_pDIDOPipEeSlitGdvFgLeA" elementId="bottom" containerData="5000" selectedElement="_pDIDPfipEeSlitGdvFgLeA">
             <tags>newtablook</tags>
             <tags>org.eclipse.e4.secondaryDataStack</tags>
-            <tags>active</tags>
             <children xsi:type="advanced:Placeholder" xmi:id="_pDIDOfipEeSlitGdvFgLeA" elementId="org.eclipse.ui.views.ProblemView" ref="_pDIDp_ipEeSlitGdvFgLeA"/>
             <children xsi:type="advanced:Placeholder" xmi:id="_pDIDOvipEeSlitGdvFgLeA" elementId="org.eclipse.jdt.ui.JavadocView" ref="_pDIDrfipEeSlitGdvFgLeA"/>
             <children xsi:type="advanced:Placeholder" xmi:id="_pDIDO_ipEeSlitGdvFgLeA" elementId="org.eclipse.jdt.ui.SourceView" ref="_pDIDsfipEeSlitGdvFgLeA"/>
@@ -252,12 +251,15 @@
             <children xsi:type="advanced:Placeholder" xmi:id="_pDHdZvipEeSlitGdvFgLeA" elementId="org.eclipse.ui.views.ContentOutline" ref="_pDIDzPipEeSlitGdvFgLeA"/>
           </children>
         </children>
-        <children xsi:type="basic:PartStack" xmi:id="_rTjV0f_JEeSa3MT_vGaT0A" elementId="PartStack@3222e820" containerData="6580" selectedElement="_q-nnoP_JEeSa3MT_vGaT0A">
+        <children xsi:type="basic:PartStack" xmi:id="_rTjV0f_JEeSa3MT_vGaT0A" elementId="PartStack@3222e820" containerData="6654" selectedElement="_q-nnoP_JEeSa3MT_vGaT0A">
+          <tags>active</tags>
           <children xsi:type="basic:Part" xmi:id="_q-nnoP_JEeSa3MT_vGaT0A" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ChineseYear.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ChineseYear.java&quot; partName=&quot;ChineseYear.java&quot; title=&quot;ChineseYear.java&quot; tooltip=&quot;ChineseNewYear/src/ChineseYear.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ChineseNewYear/src/ChineseYear.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;453&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ChineseYear.java&quot; partName=&quot;ChineseYear.java&quot; title=&quot;ChineseYear.java&quot; tooltip=&quot;ChineseNewYear/src/ChineseYear.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/ChineseNewYear/src/ChineseYear.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;345&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
             <tags>Editor</tags>
             <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
             <tags>removeOnHide</tags>
+            <tags>active</tags>
+            <tags>activeOnClose</tags>
           </children>
         </children>
       </children>
@@ -361,8 +363,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_pDIDt_ipEeSlitGdvFgLeA" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -553,7 +553,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_pDIEB_ipEeSlitGdvFgLeA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_MX5ksP_DEeSa3MT_vGaT0A" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_pDJ4-PipEeSlitGdvFgLeA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RwMUsP_nEeSjUP3InXxEBQ" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_pDJ4-PipEeSlitGdvFgLeA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_pDIEFfipEeSlitGdvFgLeA" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -583,7 +583,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_pDIEUvipEeSlitGdvFgLeA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_MX_rUP_DEeSa3MT_vGaT0A" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_pDJ4aPipEeSlitGdvFgLeA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_RwR0QP_nEeSjUP3InXxEBQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_pDJ4aPipEeSlitGdvFgLeA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_pDIEXfipEeSlitGdvFgLeA" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -831,7 +831,6 @@
     <bindings xmi:id="_pDIFM_ipEeSlitGdvFgLeA" keySequence="ALT+SHIFT+Q L" command="_pDJTr_ipEeSlitGdvFgLeA">
       <parameters xmi:id="_pDIFNPipEeSlitGdvFgLeA" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.pde.runtime.LogView"/>
     </bindings>
-    <bindings xmi:id="_L2p40P_DEeSa3MT_vGaT0A" keySequence="ALT+CTRL+R" command="_pDJ5VfipEeSlitGdvFgLeA"/>
   </bindingTables>
   <bindingTables xmi:id="_pDIFNvipEeSlitGdvFgLeA" elementId="org.eclipse.jdt.ui.javaEditorScope" bindingContext="_pDIqzvipEeSlitGdvFgLeA">
     <bindings xmi:id="_pDIFN_ipEeSlitGdvFgLeA" keySequence="CTRL+SHIFT+C" command="_pDJS6fipEeSlitGdvFgLeA"/>
@@ -897,50 +896,7 @@
     <bindings xmi:id="_pDIqOPipEeSlitGdvFgLeA" keySequence="ALT+ARROW_UP" command="_pDJTqfipEeSlitGdvFgLeA"/>
     <bindings xmi:id="_pDIqOfipEeSlitGdvFgLeA" keySequence="ALT+SHIFT+C" command="_pDJ6BfipEeSlitGdvFgLeA"/>
   </bindingTables>
-  <bindingTables xmi:id="_pDIqOvipEeSlitGdvFgLeA" elementId="org.python.pydev.ui.editor.scope" bindingContext="_pDIqzfipEeSlitGdvFgLeA">
-    <bindings xmi:id="_L2drkf_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+ARROW_DOWN" command="_pDJ5n_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2e5sP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+ARROW_UP" command="_pDJ5lPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2gu4P_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+ARROW_UP" command="_pDJS0_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2jLIP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+F" command="_pDJ5ofipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2jyMP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+I" command="_pDJTDvipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2lAUP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+G" command="_pDJ48_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2m1gP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+D" command="_pDJStPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2qf4P_DEeSa3MT_vGaT0A" keySequence="CTRL+-" command="_pDJTf_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2rG8P_DEeSa3MT_vGaT0A" keySequence="CTRL+2" command="_pDJ5GfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2tjMP_DEeSa3MT_vGaT0A" keySequence="CTRL+/" command="_pDJ5rvipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2uKQP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+O" command="_pDJT9_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2vYYP_DEeSa3MT_vGaT0A" keySequence="F3" command="_pDJ6BPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2v_cP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+R" command="_pDJTpPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2v_cf_DEeSa3MT_vGaT0A" keySequence="CTRL+5" command="_pDJTD_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2v_cv_DEeSa3MT_vGaT0A" keySequence="CTRL+9" command="_pDJTVvipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2wmgP_DEeSa3MT_vGaT0A" keySequence="ALT+CTRL+F9" command="_pDJTTvipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2xNkP_DEeSa3MT_vGaT0A" keySequence="SHIFT+F9" command="_pDJ5afipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2x0oP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+F9" command="_pDJ47fipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2x0of_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+O" command="_pDJSxPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2ybsP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+L" command="_pDJT5_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2ybsf_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+3" command="_pDJTO_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2zCwP_DEeSa3MT_vGaT0A" keySequence="F9" command="_pDJ51PipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2zCwf_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+P" command="_pDJTXfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2zp0P_DEeSa3MT_vGaT0A" keySequence="CTRL+F9" command="_pDJ5j_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2zp0f_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+4" command="_pDJS1_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2zp0__DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+T" command="_pDJS4fipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L20Q4P_DEeSa3MT_vGaT0A" keySequence="F4" command="_pDJ5nPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L20Q4f_DEeSa3MT_vGaT0A" keySequence="F2" command="_pDJSvfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L20Q4v_DEeSa3MT_vGaT0A" keySequence="CTRL+0" command="_pDJ5tfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L20Q4__DEeSa3MT_vGaT0A" keySequence="CTRL+4" command="_pDJTevipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2038P_DEeSa3MT_vGaT0A" keySequence="ALT+CTRL+CR" command="_pDJSqPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L2038f_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+M" command="_pDJS2fipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L21fAP_DEeSa3MT_vGaT0A" keySequence="CTRL+O" command="_pDJS3fipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L21fAf_DEeSa3MT_vGaT0A" keySequence="CTRL+\" command="_pDJTO_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L22GEP_DEeSa3MT_vGaT0A" keySequence="CTRL+=" command="_pDJ4hfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L22tIP_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+ARROW_DOWN" command="_pDJUBPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L23UMP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T C" command="_pDJTOPipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L237QP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T I" command="_pDJTDvipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L237Qf_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T E" command="_pDJS2fipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L24iUP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T L" command="_pDJT5_ipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L24iUf_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T P" command="_pDJ4dfipEeSlitGdvFgLeA"/>
-    <bindings xmi:id="_L25JYP_DEeSa3MT_vGaT0A" keySequence="ALT+SHIFT+T O" command="_pDJTs_ipEeSlitGdvFgLeA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_pDIqOvipEeSlitGdvFgLeA" elementId="org.python.pydev.ui.editor.scope" bindingContext="_pDIqzfipEeSlitGdvFgLeA"/>
   <bindingTables xmi:id="_pDIqZfipEeSlitGdvFgLeA" elementId="org.eclipse.jdt.ui.breadcrumbEditorScope" bindingContext="_pDIq8fipEeSlitGdvFgLeA">
     <bindings xmi:id="_pDIqZvipEeSlitGdvFgLeA" keySequence="ALT+SHIFT+B" command="_pDJ57PipEeSlitGdvFgLeA"/>
   </bindingTables>
@@ -1013,9 +969,7 @@
   <bindingTables xmi:id="_pDIqmvipEeSlitGdvFgLeA" elementId="org.eclipse.debug.ui.BreakpointView" bindingContext="_pDIqyvipEeSlitGdvFgLeA">
     <bindings xmi:id="_pDIqm_ipEeSlitGdvFgLeA" keySequence="ALT+CR" command="_pDJSr_ipEeSlitGdvFgLeA"/>
   </bindingTables>
-  <bindingTables xmi:id="_pDIqnPipEeSlitGdvFgLeA" elementId="com.python.pydev.contexts.window" bindingContext="_pDIq5fipEeSlitGdvFgLeA">
-    <bindings xmi:id="_L2zp0v_DEeSa3MT_vGaT0A" keySequence="CTRL+SHIFT+T" command="_pDJ4jvipEeSlitGdvFgLeA"/>
-  </bindingTables>
+  <bindingTables xmi:id="_pDIqnPipEeSlitGdvFgLeA" elementId="com.python.pydev.contexts.window" bindingContext="_pDIq5fipEeSlitGdvFgLeA"/>
   <bindingTables xmi:id="_pDIqnvipEeSlitGdvFgLeA" bindingContext="_pDIq8_ipEeSlitGdvFgLeA"/>
   <bindingTables xmi:id="_pDIqn_ipEeSlitGdvFgLeA" bindingContext="_pDIq9PipEeSlitGdvFgLeA"/>
   <bindingTables xmi:id="_pDIqoPipEeSlitGdvFgLeA" bindingContext="_pDIq9fipEeSlitGdvFgLeA"/>

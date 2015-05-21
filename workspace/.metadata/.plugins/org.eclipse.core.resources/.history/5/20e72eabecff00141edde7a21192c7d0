@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 import static java.lang.System.out;
 
 public class ChineseYear {
@@ -8,19 +7,14 @@ public class ChineseYear {
 
 	public static void main(String[] args) {
 		while (true) {
-			//open scanner
-			@SuppressWarnings("resource")
 			Scanner yearInput = new Scanner(System.in);
 			out.print("Enter Year: ");
 			
-			//test input
 			if (yearInput.hasNextInt()) {
 				int year = yearInput.nextInt();
-				
-				//check value
+				yearInput.close();
 				if (year >= s_minYear) {
 					EvalChineseYear(year);
-					yearInput.close();
 					break;
 				}
 			}
@@ -75,7 +69,7 @@ public class ChineseYear {
 			animal = "[YOU BROKE MATH]";
 		}
 		
-		out.printf("%d was the year of the %s.", year, animal);
+		out.printf("%d was the year of the %s", year, animal);
 		
 		
 	}
