@@ -22,6 +22,7 @@ public class OddOrEven {
 				default:
 					out.println("Odd");
 				}
+				
 				numInput.close();
 				break;
 				
