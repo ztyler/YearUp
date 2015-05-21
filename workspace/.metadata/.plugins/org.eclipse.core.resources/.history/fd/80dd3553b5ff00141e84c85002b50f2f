@@ -22,14 +22,14 @@ public class OddOrEven {
 				default:
 					out.println("Odd");
 				}
-				numInput.close();
+				
 				break;
 				
 			}
 			else {
+				numInput.close();
 				out.println("Invalid entry\n");
 			}
-		
 		}
 		
 	}

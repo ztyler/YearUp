@@ -29,7 +29,6 @@ public class OddOrEven {
 			else {
 				out.println("Invalid entry\n");
 			}
-		
 		}
 		
 	}

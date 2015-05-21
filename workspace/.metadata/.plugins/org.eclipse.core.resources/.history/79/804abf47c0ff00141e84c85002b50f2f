@@ -30,6 +30,8 @@ public class OddOrEven {
 				out.println("Invalid entry\n");
 			}
 		
+		numInput.close();
+		
 		}
 		
 	}
