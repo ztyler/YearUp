@@ -16,11 +16,7 @@ public class Main  {
 		
 		elements = loadElements();
 		
-		Atom element = new Atom(97);
 		
-		out.println(element._name);
-		out.println(element._symbol);
-		out.println(element._electrons);
 	}
 	
 	static String[][] loadElements() throws Exception {
@@ -29,10 +25,11 @@ public class Main  {
 		 * [1]: name
 		 * [2]: symbol
 		 */
-		URL url = Main.class.getResource("elements.txt");
-		File fileElements = new File(url.getPath());
 		
-		Scanner scanElements = new Scanner(fileElements);
+		URL url = Main.class.getResource("elements.txt");
+		File f_Elements = new File(url.getPath());
+		
+		Scanner scanElements = new Scanner(f_Elements);
 		
 		List<String> temp = new ArrayList<String>();
 		

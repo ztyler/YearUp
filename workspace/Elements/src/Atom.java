@@ -1,10 +1,10 @@
 public class Atom {
-	int _protons, _neutrons, _electrons;
-	int _charge = 0, _valence;
-	int _indexElementsList;
-	String _name, _symbol, _electronConfig;
-	String[] _shells;
-	boolean _isIon = false, _isIsotope = false;
+	int protons, neutrons, electrons;
+	int charge = 0, valence;
+	int indexElementsList;
+	String name, symbol, electronConfig;
+	String[] shells;
+	boolean isIon = false, isIsotope = false;
 	
 	Atom(int p) {
 		createInfo(p);
@@ -17,20 +17,20 @@ public class Atom {
 	}
 	
 	private void createInfo(int p) {
-		_protons = p;
-		_indexElementsList = _protons - 1;
-		_name = Main.elements[_indexElementsList][1];
-		_symbol = Main.elements[_indexElementsList][2];
-		_electronConfig = Main.elements[_indexElementsList][3];
-		_shells = _electronConfig.split("-");
+		protons = p;
+		indexElementsList = protons - 1;
+		name = Main.elements[indexElementsList][1];
+		symbol = Main.elements[indexElementsList][2];
+		electronConfig = Main.elements[indexElementsList][3];
+		shells = electronConfig.split("-");
 	}
 	
 	private void createElectrons() {
 		int sum = 0;
-		for (int i = 0; i < _shells.length; i++) {
-			sum += Integer.parseInt(_shells[i]);
+		for (int i = 0; i < shells.length; i++) {
+			sum += Integer.parseInt(shells[i]);
 		}
-		_electrons = sum;
+		electrons = sum;
 	}
 	
 	

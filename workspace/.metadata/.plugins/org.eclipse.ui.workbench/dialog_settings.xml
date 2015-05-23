@@ -5,8 +5,8 @@
 		<item value="116" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="526" key="dialogHeight"/>
-		<item value="1025" key="dialogWidth"/>
+		<item value="596" key="dialogHeight"/>
+		<item value="1152" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -18,12 +18,13 @@
 	</section>
 	<section name="PreferencesImportWizard">
 		<item value="C:\Sandbox\YearUp\theme-30.epf" key=""/>
+		<item value="C:\Sandbox\YearUp\theme-30.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="C:\Sandbox\YearUp\theme-30.epf"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
