@@ -56,13 +56,13 @@ public class Main  {
 		scanElements.close();
 		
 		String[] x = temp.toArray(new String[temp.size()]);
-		String[][] elementsList = new String[x.length][4];
+		String[][] y = new String[x.length][4];
 		
 		for (int i = 0; i < x.length; i++) {
 			String[] elementInfo = x[i].split("\\s+");
-			elementsList[i] = elementInfo;
+			y[i] = elementInfo;
 		}
 		
-		return elementsList;
+		return y;
 	}
 }

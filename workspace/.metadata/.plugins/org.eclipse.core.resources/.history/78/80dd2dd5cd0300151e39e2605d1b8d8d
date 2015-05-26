@@ -16,19 +16,19 @@ public class Main  {
 		
 		elements = loadElements();
 		
-		Atom Atom = new Atom(67);
+		Atom atom1 = new Atom(27);
 		
 		out.printf("%s\n"
 				+ "protons: %d\n"
 				+ "neutrons: %d\n"
 				+ "electrons: %d\n\n", 
-				Atom.name,
-				Atom.protons,
-				Atom.neutrons,
-				Atom.electrons);
+				atom1.name,
+				atom1.protons,
+				atom1.neutrons,
+				atom1.electrons);
 		
-		for (int i = 0; i < Atom.shells.length; i++) {
-			out.printf("electron shell %d: %s\n", i + 1, Atom.shells[i]);
+		for (int i = 0; i < atom1.shells.length; i++) {
+			out.printf("electron shell %d: %s\n", i + 1, atom1.shells[i]);
 		}
 		
 	}
@@ -40,7 +40,6 @@ public class Main  {
 		 * [2]: symbol
 		 */
 		
-		//grab file directory
 		URL url = Main.class.getResource("elements.txt");
 		File f_Elements = new File(url.getPath());
 		
@@ -56,13 +55,13 @@ public class Main  {
 		scanElements.close();
 		
 		String[] x = temp.toArray(new String[temp.size()]);
-		String[][] elementsList = new String[x.length][4];
+		String[][] y = new String[x.length][4];
 		
 		for (int i = 0; i < x.length; i++) {
 			String[] elementInfo = x[i].split("\\s+");
-			elementsList[i] = elementInfo;
+			y[i] = elementInfo;
 		}
 		
-		return elementsList;
+		return y;
 	}
 }
