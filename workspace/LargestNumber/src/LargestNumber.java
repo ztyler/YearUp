@@ -33,23 +33,24 @@ public class LargestNumber {
 	
 	static void largestWhile(int[] numArray) {
 		if (numArray != null) {
-			//make largest the first value in the array
-			int largest = numArray[0];
-			
-			//start index at 0
-			int i = 0;
-			
-			//test each value in the array, assigning the biggest value to largest
-			while (i < numArray.length) {
-				if (numArray[i] > largest)
-					largest = numArray[i];
+			if (numArray.length > 0) {
+				int largest = numArray[0];
+				int i = 0;
 				
-				//add 1 to the index
-				i++;
+				while (i < numArray.length) {
+					if (numArray[i] > largest)
+						largest = numArray[i];
+					
+					i++;
+				}
+				System.out.println("Largest (while): " + largest);
 			}
-			
-			System.out.println("Largest (while): " + largest);
-			
+			else {
+				System.out.println("Empty array, stupid.");
+			}
+		}
+		else {
+			System.out.println("Null array, stupid.");
 		}
 	}
 }
