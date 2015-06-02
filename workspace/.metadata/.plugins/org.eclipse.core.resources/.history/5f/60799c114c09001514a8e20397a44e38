@@ -4,7 +4,7 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 		
-		String original = "Hello Class 13!";
+		String original = "Pamela";
 		
 		inPlaceSwap(original);
 		
@@ -15,20 +15,18 @@ public class ReverseString {
 	
 	//used StringBuilder instead of two char[]. Still uses in-place swap strategy
 	static void inPlaceSwap(String input) {
-		if (input != null) {
-			StringBuilder reverse = new StringBuilder(input);
-			
-			for (int i = 0, n = input.length() - 1; i < input.length()/2; i++, n--) {
-				char swap = reverse.charAt(i);
-				reverse.setCharAt(i, reverse.charAt(n));
-				reverse.setCharAt(n, swap);
-			}
-			
-			out.println(reverse);
+		StringBuilder reverse = new StringBuilder(input);
+		char swap;
+		
+		for (int i = 0, n = input.length() - 1; i < input.length()/2; i++, n--) {
+			swap = reverse.charAt(i);
+			reverse.setCharAt(i, reverse.charAt(n));
+			reverse.setCharAt(n, swap);
 		}
+		
+		out.println(reverse);
 	}
 	
-	//out-place swap
 	static void outPlaceSwap(String input) {
 		
 		char[] reverse = new char[input.length()];
@@ -42,14 +40,14 @@ public class ReverseString {
 	}
 	
 	//alternate out-place
-	static void reverseString(String input) {
-		String reverse = "";
-		
-		for (int i = input.length() - 1; i >= 0; i--) {
-			reverse += input.charAt(i);
+		static void reverseString(String input) {
+			String reverse = "";
+			
+			for (int i = input.length() - 1; i >= 0; i--) {
+				reverse += input.charAt(i);
+			}
+			
+			out.println(reverse);
 		}
-		
-		out.println(reverse);
-	}
 
 }

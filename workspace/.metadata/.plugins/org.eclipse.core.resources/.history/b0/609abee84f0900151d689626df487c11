@@ -38,9 +38,8 @@ public class LargestNumber {
 				int i = 0;
 				
 				while (i < numArray.length) {
-					if (numArray[i] > largest) {
+					if (numArray[i] > largest)
 						largest = numArray[i];
-					}
 					
 					i++;
 				}
