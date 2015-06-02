@@ -3,8 +3,8 @@ import static java.lang.System.out;
 public class ReverseString {
 
 	public static void main(String[] args) {
-
-		reverseString("Pamela");
+		// TODO Auto-generated method stub
+		reverseString("Hello Class 13!");
 		
 	}
 	//better way of doing it

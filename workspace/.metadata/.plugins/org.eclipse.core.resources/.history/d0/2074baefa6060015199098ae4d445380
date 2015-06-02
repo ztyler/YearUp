@@ -14,6 +14,9 @@ public class ArraySearch {
 	
 	static void simpleSearch(int[] array, int query) {
 		if (array != null) {
+			
+			System.out.printf("Searching for %d...\n", query);
+			
 			int i;
 			for (i = 0; i < array.length; i++) {
 				if (array[i] == query) {
@@ -32,6 +35,8 @@ public class ArraySearch {
 	
 	static void countQuery(int[] array, int query) {
 		int count = 0;
+		
+		System.out.println("Counting " + query);
 		
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == query) {

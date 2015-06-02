@@ -4,6 +4,8 @@ public class ArraySearch {
 	public static void main(String[] args) {
 		int[] array = {85, 29, 34, 110, 43, 34};
 		
+		System.out.println(array);
+		
 		simpleSearch(array, 34);
 		simpleSearch(array, 35);
 		

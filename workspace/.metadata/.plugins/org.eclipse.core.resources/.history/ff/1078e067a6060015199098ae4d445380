@@ -14,6 +14,9 @@ public class ArraySearch {
 	
 	static void simpleSearch(int[] array, int query) {
 		if (array != null) {
+			
+			System.out.printf("Searching for %d...\n", query);
+			
 			int i;
 			for (i = 0; i < array.length; i++) {
 				if (array[i] == query) {
@@ -33,6 +36,8 @@ public class ArraySearch {
 	static void countQuery(int[] array, int query) {
 		int count = 0;
 		
+		System.out.println("Counting " + query);
+		
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == query) {
 				count++;
@@ -43,7 +48,7 @@ public class ArraySearch {
 			System.out.printf("There is 1 occurance of %d\n\n", query);
 		}
 		else {
-			System.out.printf("There are %d occurances of %d\n\n", count, query);
+			System.out.printf("There are %d occurences of %d\n\n", count, query);
 		}
 		
 	}
