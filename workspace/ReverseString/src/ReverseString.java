@@ -6,6 +6,8 @@ public class ReverseString {
 
 		reverseString("Pamela");
 		
+		inPlaceSwap("Pamela");
+		
 	}
 	//better way of doing it
 	static void reverseString(String input) {
@@ -18,13 +20,23 @@ public class ReverseString {
 		out.println(reversed);
 	}
 	
+	//used StringBuilder instead of two char[]. Still uses in-place swap strategy
 	static void inPlaceSwap(String input) {
-		int character = 0;
-		int swap = input.length();
+		StringBuilder reverse = new StringBuilder(input);
+		char swap;
+		
+		for (int i = 0, n = input.length() - 1; i < input.length()/2; i++, n--) {
+			swap = reverse.charAt(i);
+			reverse.setCharAt(i, reverse.charAt(n));
+			reverse.setCharAt(n, swap);
+		}
+		
+		out.println(reverse);
 	}
 	
 	static void outPlaceSwap(String input) {
-		String[] swapArray = new String[input.length()];
+		
+		
 	}
 
 }

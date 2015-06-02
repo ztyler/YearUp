@@ -1,0 +1,39 @@
+import static java.lang.System.out;
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+
+		reverseString("Pamela");
+		
+		inPlaceSwap("Pamela");
+		
+	}
+	//better way of doing it
+	static void reverseString(String input) {
+		String reversed = "";
+		
+		for (int i = input.length() - 1; i >= 0; i--) {
+			reversed += input.charAt(i);
+		}
+		
+		out.println(reversed);
+	}
+	
+	static void inPlaceSwap(String input) {
+		int character;
+		int swap = input.length() - 1;
+		
+		for (character = 0; character < input.length()/2; character++, swap--) {
+			input = input.replace(input.charAt(character), input.charAt(swap)); 
+		}
+		
+		out.println(input);
+	}
+	
+	static void outPlaceSwap(String input) {
+		char[] swapArray = new char[input.length()];
+		char[] inputArray = input.toCharArray();
+	}
+
+}
