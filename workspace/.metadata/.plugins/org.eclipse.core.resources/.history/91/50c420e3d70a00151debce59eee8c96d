@@ -1,0 +1,21 @@
+import static java.lang.System.out;
+
+public class Main {
+
+	public static void main(String[] args) {
+		out.println(helloName("Zach"));
+		out.println(makeOutWord("<<>>", "Zach"));
+
+	}
+	
+	static String helloName(String name) {
+		String newString = "Hello " + name + "!";
+		return newString;
+	}
+	
+	static String makeOutWord(String out, String word) {
+		String newString = out.substring(0, 2) + word + out.substring(out.length() - 3, out.length());
+		return newString;
+	}
+
+}
