@@ -1,0 +1,17 @@
+public class Main {
+
+	public static void main(String[] args) {
+		
+		LCRoster OneUp = new LCRoster(3, "One-Up");
+		
+		OneUp.printInfo();
+		
+		String[] students = {"Zachary Tyler", "Taha Sabra", "Adrian Brinson", null};
+		
+		OneUp.inputStudentList(students);
+		
+		OneUp.printInfo();
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+import static java.lang.System.out;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		LCRoster OneUp = new LCRoster(3, "One-Up");
+		
+		out.println(OneUp.getName());
+		out.println(OneUp.getID());
+		
+		OneUp.printInfo();
+		
+	}
+
+}

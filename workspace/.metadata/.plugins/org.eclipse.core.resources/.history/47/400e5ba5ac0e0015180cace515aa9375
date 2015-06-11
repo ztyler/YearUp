@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Circle circle = new Circle();
+		circle.m_radius = 5;
+		
+		IShape plate = circle;
+		
+		
+		System.out.println(plate.calculateArea());
+
+	}
+
+}
