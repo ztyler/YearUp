@@ -21,4 +21,6 @@
 <fullyQualifiedTypeName name="java.lang.IncompatibleClassChangeError"/>
 <fullyQualifiedTypeName name="SchoolTeacher"/>
 <fullyQualifiedTypeName name="Banker"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,38 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
+public class Anagram {
+
+	public static void main(String[] args) {
+		String wordOne = "Blah";
+		String wordTwo = "hlAb";
+		
+		isAnagram(wordOne, wordTwo);
+	}
+	
+	static void isAnagram(String wordOne, String wordTwo) {
+		if (wordOne != null && wordTwo != null) {
+			boolean isAnagram = false;
+			wordOne = wordOne.toUpperCase();
+			wordTwo = wordTwo.toUpperCase();
+			
+			char[] arrayOne = wordOne.toCharArray();
+			char[] arrayTwo = wordTwo.toCharArray();
+			
+			Arrays.sort(arrayOne);
+			Arrays.sort(arrayTwo);
+			
+			out.println(arrayOne);
+			out.println(arrayTwo);
+			
+		}
+		else {
+			out.println("Null value!");
+		}
+		
+	}
+		
+
+}

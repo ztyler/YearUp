@@ -1,0 +1,61 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
+public class Anagram {
+
+	public static void main(String[] args) {
+		String wordOne = "Blah";
+		String wordTwo = "hhAb";
+		
+		isAnagram(wordOne, wordTwo);
+	}
+	
+	static void isAnagram(String wordOne, String wordTwo) {
+		if (wordOne != null && wordTwo != null) {
+			boolean isAnagram;
+			wordOne = wordOne.toUpperCase();
+			wordTwo = wordTwo.toUpperCase();
+			
+			if (wordOne.length() == wordTwo.length()) {
+				String found = "";
+				char[] letters = wordOne.toCharArray();
+				
+				if (wordOne.matches("^[A-Z]+$") && wordTwo.matches("^[A-Z]+$")) {
+					for (int i = 0; i < wordOne.length(); i++) {
+						if (!Arrays.asList(found).contains(wordTwo.charAt(i))) {
+							if (!Arrays.asList(letters).contains(wordTwo.charAt(i))) {
+								found += wordTwo.charAt(i);
+								isAnagram = true;
+							}
+							else {
+								isAnagram = false;
+							}
+						}
+						else {
+							isAnagram = false;
+						}
+					}
+				}
+				else {
+					out.printf("No numbers please, ");
+					isAnagram = false;
+				}
+				
+				if (isAnagram) {
+					out.println("totally an anagram.");
+				}
+				else {
+					out.println("so totally not an anagram");
+				}
+			}
+			
+		}
+		else {
+			out.println("Null value!");
+		}
+		
+	}
+
+}
