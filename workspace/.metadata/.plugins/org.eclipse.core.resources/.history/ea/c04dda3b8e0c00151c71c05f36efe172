@@ -1,0 +1,48 @@
+import static java.lang.System.out;
+
+public class Main {
+
+	public static void main(String[] args) {
+		out.println(helloName("Zach"));
+		out.println(makeOutWord("<<>>", "Zach"));
+		out.println(firstHalf("WooHoo"));
+		out.println(withoutEnd("Hello"));
+	}
+	
+	static String helloName(String name) {
+		String newString = "Hello " + name + "!";
+		return newString;
+	}
+	
+	static String makeOutWord(String out, String word) {
+		String newString = out.substring(0, 2) + word + out.substring(out.length() - 2, out.length());
+		return newString;
+	}
+	
+	static String firstHalf(String word) {
+		word = word.substring(0, word.length()/2);
+		return word;
+	}
+	
+	static String withoutEnd(String str) {
+		return str.substring(1, str.length() - 1);
+	}
+	
+	static String firstTwo(String str) {
+		if (str.length() < 2) {
+			return str;
+		}
+		return str.substring(0, str.length() - (str.length() - 2));
+	}
+	
+	static String comboString(String a, String b) {
+		if (a.length() > b.length()) {
+			return b + a + b;
+		}
+		return a + b + a;
+	}
+	
+	static String leftTwo(String str) {
+		return str.substring(2) + str.substring(0, 2); 
+	}
+}	
