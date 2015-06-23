@@ -1,0 +1,23 @@
+
+public class ExceptionCentral {
+	
+	public static void main(String[] args) {
+		firstMethod();
+		
+		secondMethod();
+	}
+
+	static int firstMethod() throws ArithmeticException {
+		int numberThatExists = 4 / 0;
+		
+		return numberThatExists;
+	}
+	
+	static String secondMethod() throws NullPointerException {
+		String thisShouldWork = null + "";
+		
+		return thisShouldWork;
+	}
+	
+}
+
