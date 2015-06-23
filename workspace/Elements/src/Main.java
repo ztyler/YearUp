@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Main  {
 		
 		elements = loadElements();
 		
-		Atom Atom = new Atom(67);
+		Atom Atom = new Atom(89);
 		
 		out.printf("%s\n"
 				+ "protons: %d\n"
@@ -33,7 +34,7 @@ public class Main  {
 		
 	}
 	
-	static String[][] loadElements() throws Exception {
+	static String[][] loadElements() throws FileNotFoundException {
 		/* for each element in 1st dimension:
 		 * [0]: atomic number
 		 * [1]: name
