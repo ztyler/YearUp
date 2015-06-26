@@ -8,13 +8,11 @@ public class Main {
 		// TODO Auto-generated method stub
 		try {
 				String readFile = read("OOP_week15.txt");
-				String formattedFile = replace(readFile, ". ", ". \n");
-				System.out.println(formattedFile);
-				System.out.println();
+				String replacedFile = replace(readFile, "dolor", "hedon");
 				
-				String replacedFile = replace(formattedFile, "dolor", "hedon");
 				System.out.println(replacedFile);
-			
+				
+				write(replacedFile, "OOP_week15.txt");
 		}
 		catch (IOException ex) {
 			System.out.println("File not found");
@@ -79,5 +77,19 @@ public class Main {
 		
 		return replaced;
 		
+	}
+
+	public static void write(String fileString, String fileName) throws IOException {
+		if (fileName == null || fileString == null) {
+			throw new NullPointerException();
+		}
+		else {
+			URL f_URL = Main.class.getResource(fileName);
+			
+			FileWriter writerThingy = new FileWriter(f_URL.getPath(), false);
+			
+			writerThingy.write(fileString);
+			writerThingy.close();			
+		}
 	}
 }
