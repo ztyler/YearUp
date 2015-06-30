@@ -1,0 +1,158 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+
+
+public class TicTacToeGUI {
+
+	private JFrame frame;
+	private static JButton[][] grid = new JButton[3][3];
+	private static int y, x; //grid coordinates
+	private static boolean redTurn = true;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TicTacToeGUI window = new TicTacToeGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public TicTacToeGUI() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(new GridLayout(3, 3));
+		
+		for (y = 0; y < grid.length; y++) {
+			for (x = 0; x < grid[y].length; x++) {
+				grid[y][x] = new JButton();
+				grid[y][x].setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+				grid[y][x].addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						if (redTurn) {
+							grid[y][x].setBackground(new Color(200, 50, 50));
+							grid[y][x].setText("X");
+							redTurn = false;
+						}
+						else {
+							grid[y][x].setBackground(new Color(50, 50, 200));
+							grid[y][x].setText("O");
+							redTurn = true;
+						}
+						
+						grid[y][x].setEnabled(false);
+					}
+				});
+				frame.add(grid[y][x]);
+			}
+		}
+		
+		/*
+		JButton btn1_1 = new JButton();
+		btn1_1.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				clickBtn(btn1_1);
+			}
+		});
+		frame.getContentPane().add(btn1_1);
+		
+		JButton btn1_2 = new JButton();
+		btn1_2.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn1_2);
+			}
+		});
+		frame.getContentPane().add(btn1_2);
+		
+		JButton btn1_3 = new JButton();
+		btn1_3.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn1_3);
+			}
+		});
+		frame.getContentPane().add(btn1_3);
+		
+		JButton btn2_1 = new JButton();
+		btn2_1.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn2_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn2_1);
+			}
+		});
+		frame.getContentPane().add(btn2_1);
+		
+		JButton btn2_2 = new JButton();
+		btn2_2.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn2_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn2_2);
+			}
+		});
+		frame.getContentPane().add(btn2_2);
+		
+		JButton btn2_3 = new JButton();
+		btn2_3.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn2_3);
+			}
+		});
+		frame.getContentPane().add(btn2_3);
+		
+		JButton btn3_1 = new JButton();
+		btn3_1.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn3_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn3_1);
+			}
+		});
+		frame.getContentPane().add(btn3_1);
+		
+		JButton btn3_2 = new JButton();
+		btn3_2.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn3_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn3_2);
+			}
+		});
+		frame.getContentPane().add(btn3_2);
+		
+		JButton btn3_3 = new JButton();
+		btn3_3.setFont(new Font("OCR A Extended", Font.PLAIN, 36));
+		btn3_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clickBtn(btn3_3);
+			}
+		});
+		frame.getContentPane().add(btn3_3);
+		
+		*/
+	}
+	
+	static void clickBtn(JButton button) {
+		
+	}
+
+}
