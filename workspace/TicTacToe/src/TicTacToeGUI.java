@@ -91,7 +91,7 @@ public class TicTacToeGUI {
 					if ((grid[num][half].getText() == grid[num][half - 1].getText()) 
 							&& (grid[num][half].getText() == grid[num][half + 1].getText())) {
 						
-						grid[num][half].setBackground(new Color(0, 170, 0));
+						grid[num][half].setBackground(new Color(250, 170, 0));
 						grid[num][half - 1].setBackground(new Color(250, 170, 0));
 						grid[num][half + 1].setBackground(new Color(250, 170, 0));
 						win = true;
@@ -101,7 +101,7 @@ public class TicTacToeGUI {
 				}
 				if (!grid[half][num].isEnabled()) {
 					if (((grid[half][num].getText() == grid[half - 1][num].getText()) 
-									&& (grid[half][num].getText() == grid[half + 1][num].getText()))) {
+							&& (grid[half][num].getText() == grid[half + 1][num].getText()))) {
 						
 						grid[half][num].setBackground(new Color(250, 170, 0));
 						grid[half - 1][num].setBackground(new Color(250, 170, 0));
@@ -120,7 +120,7 @@ public class TicTacToeGUI {
 				
 				if (!grid[half][half].isEnabled()) {
 					
-					if ((grid[half][half].getText() == grid[half - 1][half - 1].getText())
+					if ((grid[half][half].getText() == grid[half - 1][half - 1].getText()) 
 							&& (grid[half][half].getText() == grid[half + 1][half + 1].getText())) {
 						
 						grid[half][half].setBackground(new Color(250, 170, 0));
@@ -148,7 +148,7 @@ public class TicTacToeGUI {
 				System.exit(0);
 			}
 			
-			if (moves == 9) {
+			if (moves == size * size) {
 				JOptionPane.showMessageDialog(null, "Everybody loses!");
 				System.exit(0);
 			}
