@@ -1,17 +1,11 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import java.awt.GridLayout;
-import net.miginfocom.swing.MigLayout;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
 
 
-public class NameThingy {
+public class CalendarGUI {
 
 	private JFrame frame;
-	private JButton btnThebutton;
 
 	/**
 	 * Launch the application.
@@ -20,7 +14,7 @@ public class NameThingy {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					NameThingy window = new NameThingy();
+					CalendarGUI window = new CalendarGUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +26,7 @@ public class NameThingy {
 	/**
 	 * Create the application.
 	 */
-	public NameThingy() {
+	public CalendarGUI() {
 		initialize();
 	}
 
@@ -43,10 +37,6 @@ public class NameThingy {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		
-		btnThebutton = new JButton("theButton");
-		btnThebutton.setBounds(120, 180, 200, 50);
-		frame.getContentPane().add(btnThebutton);
 	}
+
 }
