@@ -1,0 +1,57 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import java.awt.GridLayout;
+import javax.swing.JButton;
+
+
+
+public class LifeGUI {
+
+	private JFrame frame;
+	private static int _x = 10;
+	private static int _y = 10;
+	private JButton[][] grid = new JButton[_y][_x];
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LifeGUI window = new LifeGUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public LifeGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new GridLayout(_y, _x, 0, 0));
+		
+		for (int y = 0; y < _y; y++) {
+			
+			for (int x = 0; x < _x; x++) {
+				
+				grid[y][x] = new JButton();
+				frame.getContentPane().add(grid[y][x]);
+			}
+			
+		}
+	}
+
+}

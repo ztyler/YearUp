@@ -43,7 +43,7 @@ public class TicTacToeGUI {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLayout(new GridLayout(3, 3));
+		frame.setLayout(new GridLayout(size, size));
 		
 		for (int y = 0; y < grid.length; y++) {
 			

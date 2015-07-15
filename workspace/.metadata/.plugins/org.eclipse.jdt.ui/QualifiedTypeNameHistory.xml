@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="Programmer"/>
 <fullyQualifiedTypeName name="WebProgrammer"/>
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
-<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
 <fullyQualifiedTypeName name="java.awt.Dialog"/>
 <fullyQualifiedTypeName name="ExceptionCentral"/>
 <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
@@ -41,4 +40,5 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.text.DateFormatSymbols"/>
 <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
 </qualifiedTypeNameHistroy>

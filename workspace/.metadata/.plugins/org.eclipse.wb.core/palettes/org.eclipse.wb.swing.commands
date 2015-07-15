@@ -10,6 +10,5 @@
 		nextEntry="org.eclipse.wb.swing.layouts java.awt.FlowLayout"/>
 	<moveEntry
 		id="org.eclipse.wb.swing.components javax.swing.JButton"
-		category="org.eclipse.wb.swing.components"
-		nextEntry="org.eclipse.wb.swing.components javax.swing.JTextField"/>
+		category="org.eclipse.wb.swing.components"/>
 </commands>
