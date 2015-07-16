@@ -1,19 +1,19 @@
 import java.awt.Color;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JToolBar;
+import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -117,8 +117,8 @@ public class LifeGUI {
 			for (int x = 0; x < grid[y].length; x++)
 				grid[y][x].setEnabled(false);
 		
-	
-		int borderCount = 0;
+		List<JButton> birth = new ArrayList<JButton>();
+		List<JButton> death = new ArrayList<JButton>();
 		
 		for (int y = 0; y < grid.length; y++) {
 			for (int x = 0; x < grid[y].length; x++) {
@@ -145,16 +145,33 @@ public class LifeGUI {
 					}
 					
 				}
-				
-				if (liveNeighbors >= 3) {
 					
-					grid[y][x].setBackground(new Color(30, 200, 31));
+				if ((liveNeighbors >= 2 && liveNeighbors <= 3)) {
+						
+					birth.add(grid[y][x]);
+					
+				}
+				else {
+					
+					death.add(grid[y][x]);
 					
 				}
 				
 			}
 			
-		}	
+		}
+		
+		for (JButton btn : birth) {
+			
+			btn.setBackground(alive);
+			
+		}
+		
+		for (JButton btn : death) {
+			
+			btn.setBackground(null);
+			
+		}
 		
 	}
 	
