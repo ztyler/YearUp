@@ -1,8 +1,4 @@
-
 public class Template {
-
-	Template() {
-		
-	}
+	
 	
 }

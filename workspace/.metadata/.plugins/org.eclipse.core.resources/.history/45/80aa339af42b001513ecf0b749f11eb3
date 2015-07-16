@@ -1,0 +1,17 @@
+import javax.swing.JButton;
+
+
+public class Template {
+	
+	static JButton[][] grid = LifeGUI._grid;
+	
+	static void creatChecker() {
+		
+		for (JButton[] array: grid) {
+			for (JButton btn: array) {
+				btn.setEnabled(false);
+				btn.setBackground(LifeGUI._alive);
+			}
+		}
+	}
+}

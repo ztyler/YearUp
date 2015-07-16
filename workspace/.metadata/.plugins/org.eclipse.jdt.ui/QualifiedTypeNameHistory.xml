@@ -45,4 +45,7 @@
 <fullyQualifiedTypeName name="LifeGUI"/>
 <fullyQualifiedTypeName name="GameLogic"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="Template"/>
 </qualifiedTypeNameHistroy>
