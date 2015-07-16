@@ -1,35 +1,19 @@
-import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
 
 
-public class GameLogic {
+public class GameLogic implements Runnable{
 	
-	static JButton[][] grid;
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LifeGUI window = new LifeGUI();
-					window.frame.setVisible(true);
-					grid = window.grid;
-					
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	static JButton[][] grid = LifeGUI._grid;
+	boolean keepPlaying = true;
+	
+	GameLogic() {
+		
 	}
 	
-	public static void newGeneration() {
-			
-		for (int y = 0; y < grid.length; y++)
-			for (int x = 0; x < grid[y].length; x++)
-				grid[y][x].setEnabled(false);
+	void newGeneration() {
 		
 		List<JButton> birth = new ArrayList<JButton>();
 		List<JButton> death = new ArrayList<JButton>();
@@ -53,47 +37,47 @@ public class GameLogic {
 							continue;
 						}
 						
-						if (btnCheck.getBackground().equals(LifeGUI.alive)) {
+						if (btnCheck.getBackground().equals(LifeGUI._alive)) {
 							liveNeighbors++;
 						}
-						
 					}
-					
 				}
 				
 				//decide fate
-				if (grid[y][x].getBackground().equals(LifeGUI.alive)) {
-					
+				if (grid[y][x].getBackground().equals(LifeGUI._alive)) {
 					if (liveNeighbors < 2 || liveNeighbors > 3) {
-						
 						death.add(grid[y][x]);
-						
 					}
-					
 				}
 				else {
-					
 					if (liveNeighbors == 3) {
-						
 						birth.add(grid[y][x]);
-						
 					}
-					
 				}
-				
 			}
-			
 		}
 		
 		//update grid
 		for (JButton btn : birth)
-			btn.setBackground(LifeGUI.alive);
+			btn.setBackground(LifeGUI._alive);
 		
 		for (JButton btn : death)
 			btn.setBackground(null);
-			
+		
+		try {
+		    Thread.sleep(300);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+		
 	}
-	
+
+	public void run() {
+		do {
+			newGeneration();
+		}
+		while (keepPlaying);
+	}
 }
 
 
