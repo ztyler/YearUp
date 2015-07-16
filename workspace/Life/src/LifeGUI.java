@@ -10,15 +10,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import javax.swing.JToolBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
 
 
 public class LifeGUI {
 
-	private JFrame frame;
 	private static int _x = 25;
 	private static int _y = 25;
+	private static boolean _keepPlaying = true;
+	
+	private JFrame frame;
 	private JButton[][] grid = new JButton[_y][_x];
+	private Color alive = new Color(30, 200, 30);
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -42,10 +49,22 @@ public class LifeGUI {
 		frame.setBounds(100, 100, 700, 700);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JPanel panel = new JPanel();
-		frame.getContentPane().add(panel, BorderLayout.NORTH);
+		JPanel panel_1 = new JPanel();
+		frame.getContentPane().add(panel_1, BorderLayout.SOUTH);
+		panel_1.setLayout(new GridLayout(0, 2, 0, 0));
 		
 		JButton startBtn = new JButton("Start");
+		panel_1.add(startBtn);
+		
+		JButton btnStop = new JButton("Stop");
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				_keepPlaying = false;
+				
+			}
+		});
+		panel_1.add(btnStop);
 		startBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -53,11 +72,19 @@ public class LifeGUI {
 				
 			}
 		});
-		panel.add(startBtn);
 		
 		JPanel body = new JPanel();
 		frame.getContentPane().add(body, BorderLayout.CENTER);
 		body.setLayout(new GridLayout(_y, _x, 0, 0));
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnPresets = new JMenu("Presets");
+		menuBar.add(mnPresets);
+		
+		JMenuItem mntmTest = new JMenuItem("Test");
+		mnPresets.add(mntmTest);
 		
 		for (int y = 0; y < _y; y++)
 			for (int x = 0; x < _x; x++) {
@@ -77,7 +104,7 @@ public class LifeGUI {
 			public void actionPerformed(ActionEvent e) {
 				
 				btn.setEnabled(false);
-				btn.setBackground(new Color(30, 200, 30));
+				btn.setBackground(alive);
 				
 			}
 		});
@@ -90,14 +117,45 @@ public class LifeGUI {
 			for (int x = 0; x < grid[y].length; x++)
 				grid[y][x].setEnabled(false);
 		
-		for (int y = 0; y < grid.length; y++)
+	
+		int borderCount = 0;
+		
+		for (int y = 0; y < grid.length; y++) {
 			for (int x = 0; x < grid[y].length; x++) {
+				
 				int liveNeighbors = 0;
 				
+				for (int i = -1; i < 2; i++) {
+					for (int n = -1; n < 2; n++) {
+						if (n == 0 && i == 0) continue;
+						
+						JButton btnCheck = null;
+						
+						try {
+							btnCheck = grid[y - i][x - n];
+						}
+						catch (ArrayIndexOutOfBoundsException e) {
+							continue;
+						}
+						
+						if (btnCheck.getBackground().equals(alive)) {
+							liveNeighbors++;
+						}
+						
+					}
+					
+				}
 				
+				if (liveNeighbors >= 3) {
+					
+					grid[y][x].setBackground(new Color(30, 200, 31));
+					
+				}
 				
-			}	
+			}
+			
+		}	
 		
 	}
-
+	
 }
