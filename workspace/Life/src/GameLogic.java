@@ -6,6 +6,7 @@ import javax.swing.JButton;
 
 public class GameLogic implements Runnable{
 	
+	private volatile boolean running = true;
 	static JButton[][] grid = LifeGUI._grid;
 	boolean continuous = true;
 	
@@ -71,9 +72,13 @@ public class GameLogic implements Runnable{
 		}
 		
 	}
+	
+	public void terminate() {
+        running = false;
+    }
 
 	public void run() {
-		while (true) {
+		while (running) {
 			while (continuous) {
 				newGeneration();
 			}

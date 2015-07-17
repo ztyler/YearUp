@@ -20,23 +20,21 @@ public class LifeGUI {
 	static GameLogic _logic;
 	static Thread _game;
 	static JButton[][] _grid;
-	static Color _alive = new Color(30, 200, 30);
+	static Color _alive = new Color(30, 150, 30);
 	
 	JFrame frame;
-	JPanel gridPanel, controlPanel, launchPanel;
+	JPanel gridPanel, controlPanel, launchPanel, panel;
 	JButton btnPlay, btnStep, btnPause, btnStop, btnLaunch;
 	JMenuBar menuBar;
 	JMenu menuPresets;
 	ButtonGroup presetsBtnGroup;
-	JRadioButtonMenuItem radioDefault, radioCheckerboard;
-	private JPanel panel;
+	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(40, 40);
-					_logic = new GameLogic();
+					LifeGUI window = new LifeGUI(75, 75);
 					
 					window.frame.setVisible(true);
 					
@@ -77,13 +75,36 @@ public class LifeGUI {
 		
 		presetsBtnGroup = new ButtonGroup();
 		
-		radioDefault = new JRadioButtonMenuItem("Default");
-		menuPresets.add(radioDefault);
-		presetsBtnGroup.add(radioDefault);
+		_radioDefault = new JRadioButtonMenuItem("Default");
+		_radioDefault.setSelected(true);
+		setRadioBtn(_radioDefault);
+		menuPresets.add(_radioDefault);
+		presetsBtnGroup.add(_radioDefault);
 		
-		radioCheckerboard = new JRadioButtonMenuItem("Checkerboard");
-		menuPresets.add(radioCheckerboard);
-		presetsBtnGroup.add(radioCheckerboard);
+		_radioCheckerboard = new JRadioButtonMenuItem("Checkerboard");
+		setRadioBtn(_radioCheckerboard);
+		menuPresets.add(_radioCheckerboard);
+		presetsBtnGroup.add(_radioCheckerboard);
+		
+		_radioFourBoxes = new JRadioButtonMenuItem("Four Boxes");
+		setRadioBtn(_radioFourBoxes);
+		menuPresets.add(_radioFourBoxes);
+		presetsBtnGroup.add(_radioFourBoxes);
+		
+		_radioBorders = new JRadioButtonMenuItem("Borders");
+		setRadioBtn(_radioBorders);
+		menuPresets.add(_radioBorders);
+		presetsBtnGroup.add(_radioBorders);
+		
+		_radioMesh = new JRadioButtonMenuItem("Mesh");
+		setRadioBtn(_radioMesh);
+		menuPresets.add(_radioMesh);
+		presetsBtnGroup.add(_radioMesh);
+		
+		_radioFlowers = new JRadioButtonMenuItem("Flower Garden");
+		setRadioBtn(_radioFlowers);
+		menuPresets.add(_radioFlowers);
+		presetsBtnGroup.add(_radioFlowers);
 	}
 	
 	private void buildGrid() {
@@ -104,6 +125,7 @@ public class LifeGUI {
 				gridPanel.add(_grid[y][x]);
 			}
 		}
+		
 	}
 	
 	private void buildCntrlPanel() {
@@ -130,6 +152,7 @@ public class LifeGUI {
 		btnPause.setEnabled(false);
 		btnStop.setEnabled(false);
 		
+		//Play button
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				btnPlay.setEnabled(false);
@@ -140,12 +163,14 @@ public class LifeGUI {
 			}
 		});
 		
+		//Step button
 		btnStep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				_logic.newGeneration();
 			}
 		});
 		
+		//Pause button
 		btnPause.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				btnPlay.setEnabled(true);
@@ -156,18 +181,25 @@ public class LifeGUI {
 			}
 		});
 		
+		//Stop button
 		btnStop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				_game.interrupt();
+				_logic.continuous = false;
+				_logic.terminate();;
 				
 				btnPlay.setEnabled(false);
 				btnStep.setEnabled(false);
 				btnPause.setEnabled(false);
 				btnStop.setEnabled(false);
 				
+				menuBar.setEnabled(false);
+				
 				btnLaunch.setEnabled(true);
 				
 				resetGrid();
+				
+				_game = null;
+				_logic = null;
 			}
 		});
 		
@@ -176,6 +208,7 @@ public class LifeGUI {
 		controlPanel.add(btnPause);
 		controlPanel.add(btnStop);
 		
+		//Launch button
 		btnLaunch = new JButton("Launch");
 		btnLaunch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -183,8 +216,11 @@ public class LifeGUI {
 				btnPause.setEnabled(true);
 				btnStop.setEnabled(true);
 				
+				menuBar.setEnabled(false);
+				
 				enableGrid(false);
 				
+				_logic = new GameLogic();
 				_game = new Thread(_logic);
 				_game.start();
 			}
@@ -194,12 +230,23 @@ public class LifeGUI {
 	}
 	
 	private void setGridBtn(JButton btn) {
-		btn.addActionListener(new ActionListener() {
+		ActionListener gridBtnAction = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				btn.setEnabled(false);
 				btn.setBackground(_alive);
 			}
+		};
+		btn.addActionListener(gridBtnAction);
+	}
+	
+	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
+		
+		radioBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Template.setTemplate();
+			}
 		});
+		
 	}
 	
 	private void setGridSize(int y, int x) {
@@ -214,12 +261,16 @@ public class LifeGUI {
 		}
 	}
 	
-	private void resetGrid() {
+	static void resetGrid() {
 		for (JButton[] array : _grid) {
 			for (JButton btn : array) {
-				btn.setBackground(null);
 				btn.setEnabled(true);
+				if (btn.getBackground() != null) {
+					btn.setBackground(null);
+				}
 			}
 		}
+		
+		Template.setTemplate();
 	}
 }

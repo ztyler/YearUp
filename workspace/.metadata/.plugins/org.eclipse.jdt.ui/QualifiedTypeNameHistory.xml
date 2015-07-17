@@ -42,10 +42,11 @@
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="LifeGUI"/>
 <fullyQualifiedTypeName name="GameLogic"/>
 <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
-<fullyQualifiedTypeName name="Template"/>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.naming.ldap.Rdn"/>
+<fullyQualifiedTypeName name="Template"/>
+<fullyQualifiedTypeName name="LifeGUI"/>
 </qualifiedTypeNameHistroy>

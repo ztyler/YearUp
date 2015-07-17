@@ -1,0 +1,24 @@
+import javax.swing.JButton;
+
+public class Template {
+	
+	public void changeTemplate(int option) {
+		JButton[][] grid = LifeGUI._grid;
+		
+		switch (option) {
+		case 0:
+			for (int y = 0; y < grid.length; y++) {
+				for (int x = 0; x < grid[y].length; x++) {
+					if (y % 2 == 0) {
+						if (x % 2 != 0) {
+							grid[y][x].doClick();
+						}
+					}
+				}
+			}
+		}
+		
+		
+	}
+	
+}
