@@ -18,25 +18,25 @@ public class LifeGUI {
 	static int _x;
 	static int _y;
 	static GameLogic _logic;
-	static Thread _continuous;
+	static Thread _game;
 	static JButton[][] _grid;
 	static Color _alive = new Color(30, 200, 30);
 	
 	JFrame frame;
-	JPanel gridPanel, controlPanel;
-	JButton btnStart, btnStep, btnPause, btnStop;
+	JPanel gridPanel, controlPanel, launchPanel;
+	JButton btnPlay, btnStep, btnPause, btnStop, btnLaunch;
 	JMenuBar menuBar;
 	JMenu menuPresets;
 	ButtonGroup presetsBtnGroup;
 	JRadioButtonMenuItem radioDefault, radioCheckerboard;
+	private JPanel panel;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(75, 75);
+					LifeGUI window = new LifeGUI(40, 40);
 					_logic = new GameLogic();
-					_continuous = new Thread(_logic);
 					
 					window.frame.setVisible(true);
 					
@@ -61,9 +61,9 @@ public class LifeGUI {
 		
 		buildMenu();
 		
-		buildCntrlPanel();
-		
 		buildGrid();
+		
+		buildCntrlPanel();
 		
 	}
 	
@@ -86,78 +86,9 @@ public class LifeGUI {
 		presetsBtnGroup.add(radioCheckerboard);
 	}
 	
-	private void buildCntrlPanel() {
-		controlPanel = new JPanel();
-		frame.getContentPane().add(controlPanel, BorderLayout.SOUTH);
-		controlPanel.setLayout(new GridLayout(0, 4, 0, 0));
-		
-		btnStart = new JButton("Start");
-		btnStep = new JButton("Step");
-		btnPause = new JButton("Pause");
-		btnStop = new JButton("Stop");
-		
-		btnStep.setEnabled(false);
-		btnPause.setEnabled(false);
-		btnStop.setEnabled(false);
-		
-		btnStart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				enableGrid(false);
-				btnPause.setEnabled(true);
-				btnStop.setEnabled(true);
-				if (_continuous.isAlive()) {
-					_logic.keepPlaying = true;
-				}
-				else {
-					_continuous.start();
-				}
-				
-				
-			}
-		});
-		
-		btnStep.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				_logic.newGeneration();
-			}
-		});
-		
-		btnPause.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				_logic.keepPlaying = false;
-				btnStep.setEnabled(true);
-			}
-		});
-		
-		btnStop.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				try
-				{
-				_logic.keepPlaying = false;
-				
-				while(!_logic.keepPlaying)
-				{
-					_continuous.sleep(500);
-				}
-				}
-				catch(Exception ex)
-				{
-					
-				}
-			}
-		});
-		
-		controlPanel.add(btnStart);
-		controlPanel.add(btnStep);
-		controlPanel.add(btnPause);
-		controlPanel.add(btnStop);
-	}
-	
 	private void buildGrid() {
 		gridPanel = new JPanel();
 		frame.getContentPane().add(gridPanel, BorderLayout.CENTER);
-		
 		
 		if (_x != 0) {
 			setGridSize(_y, _x);;
@@ -175,6 +106,93 @@ public class LifeGUI {
 		}
 	}
 	
+	private void buildCntrlPanel() {
+		
+		panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		panel.setLayout(new GridLayout(2, 1, 0, 0));
+		
+		controlPanel = new JPanel();
+		panel.add(controlPanel);
+		controlPanel.setLayout(new GridLayout(0, 4, 0, 0));
+		
+		launchPanel = new JPanel();
+		panel.add(launchPanel);
+		launchPanel.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		btnPlay = new JButton("Play");
+		btnStep = new JButton("Step");
+		btnPause = new JButton("Pause");
+		btnStop = new JButton("Stop");
+		
+		btnPlay.setEnabled(false);
+		btnStep.setEnabled(false);
+		btnPause.setEnabled(false);
+		btnStop.setEnabled(false);
+		
+		btnPlay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnPlay.setEnabled(false);
+				btnStep.setEnabled(false);
+				btnPause.setEnabled(true);
+				
+				_logic.continuous = true;
+			}
+		});
+		
+		btnStep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				_logic.newGeneration();
+			}
+		});
+		
+		btnPause.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnPlay.setEnabled(true);
+				btnStep.setEnabled(true);
+				btnPause.setEnabled(false);
+				
+				_logic.continuous = false;
+			}
+		});
+		
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				_game.interrupt();
+				
+				btnPlay.setEnabled(false);
+				btnStep.setEnabled(false);
+				btnPause.setEnabled(false);
+				btnStop.setEnabled(false);
+				
+				btnLaunch.setEnabled(true);
+				
+				resetGrid();
+			}
+		});
+		
+		controlPanel.add(btnPlay);
+		controlPanel.add(btnStep);
+		controlPanel.add(btnPause);
+		controlPanel.add(btnStop);
+		
+		btnLaunch = new JButton("Launch");
+		btnLaunch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnLaunch.setEnabled(false);
+				btnPause.setEnabled(true);
+				btnStop.setEnabled(true);
+				
+				enableGrid(false);
+				
+				_game = new Thread(_logic);
+				_game.start();
+			}
+		});
+		launchPanel.add(btnLaunch);
+		
+	}
+	
 	private void setGridBtn(JButton btn) {
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -189,8 +207,19 @@ public class LifeGUI {
 	}
 	
 	private void enableGrid(boolean option) {
-		for (int y = 0; y < _grid.length; y++)
-			for (int x = 0; x < _grid[y].length; x++)
-				_grid[y][x].setEnabled(option);
+		for (JButton[] array : _grid) {
+			for (JButton btn : array) {
+				btn.setEnabled(option);
+			}
+		}
+	}
+	
+	private void resetGrid() {
+		for (JButton[] array : _grid) {
+			for (JButton btn : array) {
+				btn.setBackground(null);
+				btn.setEnabled(true);
+			}
+		}
 	}
 }
