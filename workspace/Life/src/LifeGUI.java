@@ -7,11 +7,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.SwingConstants;
 
 public class LifeGUI {
 
@@ -21,20 +23,22 @@ public class LifeGUI {
 	static Thread _game;
 	static JButton[][] _grid;
 	static Color _alive = new Color(30, 150, 30);
+	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
+	static JLabel _lblGeneration, _lblLiving;
 	
 	JFrame frame;
-	JPanel gridPanel, controlPanel, launchPanel, panel;
+	JPanel gridPanel, controlPanel, launchPanel, counterPanel, panel;
 	JButton btnPlay, btnStep, btnPause, btnStop, btnLaunch;
 	JMenuBar menuBar;
 	JMenu menuPresets;
+	JLabel generationLabel, livingLabel; 
 	ButtonGroup presetsBtnGroup;
-	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(40, 40);
+					LifeGUI window = new LifeGUI(100, 100);
 					
 					window.frame.setVisible(true);
 					
@@ -58,6 +62,8 @@ public class LifeGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		buildMenu();
+		
+		buildCounter();
 		
 		buildGrid();
 		
@@ -105,6 +111,22 @@ public class LifeGUI {
 		setRadioBtn(_radioFlowers);
 		menuPresets.add(_radioFlowers);
 		presetsBtnGroup.add(_radioFlowers);
+	}
+	
+	private void buildCounter() {
+		
+		counterPanel = new JPanel();
+		frame.getContentPane().add(counterPanel, BorderLayout.NORTH);
+		counterPanel.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		_lblGeneration = new JLabel();
+		_lblGeneration.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblGeneration);
+		
+		_lblLiving = new JLabel();
+		_lblLiving.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblLiving);
+		
 	}
 	
 	private void buildGrid() {
@@ -219,11 +241,7 @@ public class LifeGUI {
 				
 				enableGrid(false);
 				
-				try {
-				    Thread.sleep(2000);
-				} catch(InterruptedException ex) {
-				    Thread.currentThread().interrupt();
-				}
+				for (int count = -65655; count < 65655; count++);
 				
 				_logic = new GameLogic();
 				_game = new Thread(_logic);

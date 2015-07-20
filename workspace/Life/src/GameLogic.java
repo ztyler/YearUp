@@ -4,11 +4,12 @@ import java.util.List;
 import javax.swing.JButton;
 
 
-public class GameLogic implements Runnable{
+public class GameLogic implements Runnable {
 	
 	private volatile boolean running = true;
-	static JButton[][] grid = LifeGUI._grid;
+	JButton[][] grid = LifeGUI._grid;
 	boolean continuous = true;
+	
 	
 	GameLogic() {
 		
@@ -59,11 +60,13 @@ public class GameLogic implements Runnable{
 		}
 		
 		//update grid
-		for (JButton btn : birth)
+		for (JButton btn : birth) {
 			btn.setBackground(LifeGUI._alive);
+		}
 		
-		for (JButton btn : death)
+		for (JButton btn : death) {
 			btn.setBackground(null);
+		}
 		
 		try {
 		    Thread.sleep(100);

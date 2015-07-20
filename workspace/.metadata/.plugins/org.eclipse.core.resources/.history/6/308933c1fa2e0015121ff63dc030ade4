@@ -1,0 +1,102 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+
+
+public class GameLogic implements Runnable {
+	
+	private volatile boolean running = true;
+	JButton[][] grid = LifeGUI._grid;
+	static int _gen = 0, _living = 0;
+	boolean continuous = true;
+	
+	
+	GameLogic() {
+		
+	}
+	
+	void newGeneration() {
+		
+		LifeGUI._lblGeneration.setText("Generation: " + (_gen++));
+		
+		List<JButton> birth = new ArrayList<JButton>();
+		List<JButton> death = new ArrayList<JButton>();
+		
+		for (int y = 0; y < grid.length; y++) {
+			for (int x = 0; x < grid[y].length; x++) {
+				
+				int liveNeighbors = 0;
+				
+				//count living neighbors
+				for (int i = -1; i < 2; i++) {
+					for (int n = -1; n < 2; n++) {
+						if (n == 0 && i == 0) continue;
+						
+						JButton btnCheck = null;
+						
+						try {
+							btnCheck = grid[y - i][x - n];
+						}
+						catch (ArrayIndexOutOfBoundsException e) {
+							continue;
+						}
+						
+						if (btnCheck.getBackground().equals(LifeGUI._alive)) {
+							liveNeighbors++;
+						}
+					}
+				}
+				
+				//decide fate
+				if (grid[y][x].getBackground().equals(LifeGUI._alive)) {
+					if (liveNeighbors < 2 || liveNeighbors > 3) {
+						death.add(grid[y][x]);
+					}
+				}
+				else {
+					if (liveNeighbors == 3) {
+						birth.add(grid[y][x]);
+					}
+				}
+			}
+		}
+		
+		//update grid
+		for (JButton btn : birth) {
+			btn.setBackground(LifeGUI._alive);
+		}
+		
+		for (JButton btn : death) {
+			btn.setBackground(null);
+		}
+		
+		LifeGUI.setLabels(_gen, _living);
+		
+		try {
+		    Thread.sleep(100);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+		
+	}
+	
+	public void terminate() {
+        running = false;
+    }
+
+	public void run() {
+		while (running) {
+			while (continuous) {
+				newGeneration();
+			}
+			try {
+			    Thread.sleep(500);
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+		}
+	}
+}
+
+
