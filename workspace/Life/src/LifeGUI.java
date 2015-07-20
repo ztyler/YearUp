@@ -34,7 +34,7 @@ public class LifeGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(75, 75);
+					LifeGUI window = new LifeGUI(40, 40);
 					
 					window.frame.setVisible(true);
 					
@@ -186,20 +186,19 @@ public class LifeGUI {
 			public void actionPerformed(ActionEvent arg0) {
 				_logic.continuous = false;
 				_logic.terminate();;
+				_game = null;
+				_logic = null;
 				
 				btnPlay.setEnabled(false);
 				btnStep.setEnabled(false);
 				btnPause.setEnabled(false);
 				btnStop.setEnabled(false);
 				
-				menuBar.setEnabled(false);
+				menuPresets.setEnabled(true);
 				
 				btnLaunch.setEnabled(true);
 				
-				resetGrid();
-				
-				_game = null;
-				_logic = null;
+				Template.setTemplate();
 			}
 		});
 		
@@ -216,9 +215,15 @@ public class LifeGUI {
 				btnPause.setEnabled(true);
 				btnStop.setEnabled(true);
 				
-				menuBar.setEnabled(false);
+				menuPresets.setEnabled(false);
 				
 				enableGrid(false);
+				
+				try {
+				    Thread.sleep(2000);
+				} catch(InterruptedException ex) {
+				    Thread.currentThread().interrupt();
+				}
 				
 				_logic = new GameLogic();
 				_game = new Thread(_logic);
@@ -232,8 +237,12 @@ public class LifeGUI {
 	private void setGridBtn(JButton btn) {
 		ActionListener gridBtnAction = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				btn.setEnabled(false);
-				btn.setBackground(_alive);
+				if (btn.getBackground() != _alive) {
+					btn.setBackground(_alive);
+				}
+				else {
+					btn.setBackground(null);
+				}
 			}
 		};
 		btn.addActionListener(gridBtnAction);
@@ -254,23 +263,14 @@ public class LifeGUI {
 	}
 	
 	private void enableGrid(boolean option) {
-		for (JButton[] array : _grid) {
-			for (JButton btn : array) {
+		for (int y = 0; y < _grid.length; y++) {
+			for (int x = 0; x < _grid[y].length; x++) {
+				JButton btn = _grid[y][x];
+				if (btn.isEnabled() == option) {
+					continue;
+				}
 				btn.setEnabled(option);
 			}
 		}
-	}
-	
-	static void resetGrid() {
-		for (JButton[] array : _grid) {
-			for (JButton btn : array) {
-				btn.setEnabled(true);
-				if (btn.getBackground() != null) {
-					btn.setBackground(null);
-				}
-			}
-		}
-		
-		Template.setTemplate();
 	}
 }
