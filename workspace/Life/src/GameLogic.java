@@ -2,20 +2,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 
 public class GameLogic implements Runnable {
 	
 	private volatile boolean running = true;
-	JButton[][] grid = LifeGUI._grid;
 	boolean continuous = true;
+	int gen, living;
+	JButton[][] grid;
+	JLabel genCount, livingCount;
+	
 	
 	
 	GameLogic() {
-		
+		grid = LifeGUI._grid;
+		genCount = LifeGUI._lblGeneration;
+		livingCount = LifeGUI._lblLiving;
+		gen = 0;
 	}
 	
 	void newGeneration() {
+		living = 0;
 		
 		List<JButton> birth = new ArrayList<JButton>();
 		List<JButton> death = new ArrayList<JButton>();
@@ -46,18 +54,25 @@ public class GameLogic implements Runnable {
 				}
 				
 				//decide fate
-				if (grid[y][x].getBackground().equals(LifeGUI._alive)) {
-					if (liveNeighbors < 2 || liveNeighbors > 3) {
-						death.add(grid[y][x]);
+				if (!grid[y][x].getBackground().equals(LifeGUI._alive)) {
+					if (liveNeighbors == 3) {
+						birth.add(grid[y][x]);
+						continue;
 					}
 				}
 				else {
-					if (liveNeighbors == 3) {
-						birth.add(grid[y][x]);
+					living++;
+					if (liveNeighbors < 2 || liveNeighbors > 3) {
+						death.add(grid[y][x]);
+						continue;
 					}
 				}
 			}
 		}
+		
+
+		genCount.setText("Generation: " + gen++);
+		livingCount.setText("Living: " + living);
 		
 		//update grid
 		for (JButton btn : birth) {

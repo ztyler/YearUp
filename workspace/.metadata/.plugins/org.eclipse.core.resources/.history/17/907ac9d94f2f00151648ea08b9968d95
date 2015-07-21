@@ -1,0 +1,132 @@
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
+
+public class GameLogic implements Runnable {
+	
+	private volatile boolean running = true;
+	boolean continuous = true;
+	int gen = -1, living = -1, dying = -1;
+	JButton[][] grid;
+	JLabel genCount, livingCount;
+	
+	
+	
+	GameLogic() {
+		grid = LifeGUI._grid;
+		genCount = LifeGUI._lblGeneration;
+		livingCount = LifeGUI._lblLiving;
+		gen = 0;
+		dying = 0;
+		
+		enableGrid(false);
+	}
+	
+	void newGeneration() {
+		
+		List<JButton> birth = new ArrayList<JButton>();
+		List<JButton> death = new ArrayList<JButton>();
+		
+		for (int y = 0; y < grid.length; y++) {
+			for (int x = 0; x < grid[y].length; x++) {
+				
+				int liveNeighbors = 0;
+				
+				//count living neighbors
+				for (int i = -1; i < 2; i++) {
+					for (int n = -1; n < 2; n++) {
+						if (n == 0 && i == 0) continue;
+						
+						JButton btnCheck = null;
+						
+						try {
+							btnCheck = grid[y - i][x - n];
+						}
+						catch (ArrayIndexOutOfBoundsException e) {
+							continue;
+						}
+						
+						if (btnCheck.getBackground().equals(LifeGUI._alive)) {
+							liveNeighbors++;
+						}
+					}
+				}
+				
+				//decide fate
+				if (!grid[y][x].getBackground().equals(LifeGUI._alive)) {
+					if (liveNeighbors == 3) {
+						birth.add(grid[y][x]);
+						continue;
+					}
+				}
+				else {
+					if (liveNeighbors < 2 || liveNeighbors > 3) {
+						death.add(grid[y][x]);
+						living--;
+						continue;
+					}
+				}
+			}
+		}
+		
+
+		genCount.setText("Generation: " + gen++);
+		livingCount.setText("Living: " + living);
+		
+		//update grid
+		for (JButton btn : birth) {
+			btn.setBackground(LifeGUI._alive);
+		}
+		
+		for (JButton btn : death) {
+			btn.setBackground(null);
+		}
+		
+		try {
+		    Thread.sleep(100);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+		
+	}
+	
+	private void enableGrid(boolean option) {
+		for (int y = 0; y < grid.length; y++) {
+			for (int x = 0; x < grid[y].length; x++) {
+				JButton btn = grid[y][x];
+				if (btn.isEnabled() == option) {
+					continue;
+				}
+				btn.setEnabled(option);
+			}
+		}
+	}
+	
+	public void terminate() {
+        running = false;
+    }
+
+	public void run() {
+		while (running) {
+			while (continuous) {
+				newGeneration();
+			}
+			try {
+			    Thread.sleep(500);
+			} catch(InterruptedException ex) {
+			    Thread.currentThread().interrupt();
+			}
+		}
+		try {
+		    Thread.sleep(500);
+		} catch(InterruptedException ex) {
+		    Thread.currentThread().interrupt();
+		}
+		enableGrid(true);
+	}
+}
+
+

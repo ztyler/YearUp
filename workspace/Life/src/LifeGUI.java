@@ -19,6 +19,7 @@ public class LifeGUI {
 
 	static int _x;
 	static int _y;
+	static int _inititalLiving;
 	static GameLogic _logic;
 	static Thread _game;
 	static JButton[][] _grid;
@@ -38,7 +39,7 @@ public class LifeGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(100, 100);
+					LifeGUI window = new LifeGUI(50, 50);
 					
 					window.frame.setVisible(true);
 					
@@ -220,6 +221,8 @@ public class LifeGUI {
 				
 				btnLaunch.setEnabled(true);
 				
+				enableGrid(true);
+				
 				Template.setTemplate();
 			}
 		});
@@ -241,14 +244,22 @@ public class LifeGUI {
 				
 				enableGrid(false);
 				
-				for (int count = -65655; count < 65655; count++);
-				
 				_logic = new GameLogic();
 				_game = new Thread(_logic);
 				_game.start();
 			}
 		});
 		launchPanel.add(btnLaunch);
+		
+	}
+	
+	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
+		
+		radioBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Template.setTemplate();
+			}
+		});
 		
 	}
 	
@@ -264,16 +275,6 @@ public class LifeGUI {
 			}
 		};
 		btn.addActionListener(gridBtnAction);
-	}
-	
-	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
-		
-		radioBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Template.setTemplate();
-			}
-		});
-		
 	}
 	
 	private void setGridSize(int y, int x) {

@@ -51,6 +51,6 @@
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
-<fullyQualifiedTypeName name="LifeGUI"/>
 <fullyQualifiedTypeName name="GameLogic"/>
+<fullyQualifiedTypeName name="LifeGUI"/>
 </qualifiedTypeNameHistroy>
