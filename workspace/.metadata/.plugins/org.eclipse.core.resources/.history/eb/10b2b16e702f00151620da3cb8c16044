@@ -7,34 +7,39 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.SwingConstants;
 
 public class LifeGUI {
 
 	static int _x;
 	static int _y;
+	static int _inititalLiving;
 	static GameLogic _logic;
 	static Thread _game;
 	static JButton[][] _grid;
 	static Color _alive = new Color(30, 150, 30);
+	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
+	static JLabel _lblGeneration, _lblLiving;
 	
 	JFrame frame;
-	JPanel gridPanel, controlPanel, launchPanel, panel;
+	JPanel gridPanel, controlPanel, launchPanel, counterPanel, panel;
 	JButton btnPlay, btnStep, btnPause, btnStop, btnLaunch;
 	JMenuBar menuBar;
 	JMenu menuPresets;
+	JLabel generationLabel, livingLabel; 
 	ButtonGroup presetsBtnGroup;
-	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(50, 50);
+					LifeGUI window = new LifeGUI(100, 100);
 					
 					window.frame.setVisible(true);
 					
@@ -58,6 +63,8 @@ public class LifeGUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		buildMenu();
+		
+		buildCounter();
 		
 		buildGrid();
 		
@@ -107,6 +114,22 @@ public class LifeGUI {
 		presetsBtnGroup.add(_radioFlowers);
 	}
 	
+	private void buildCounter() {
+		
+		counterPanel = new JPanel();
+		frame.getContentPane().add(counterPanel, BorderLayout.NORTH);
+		counterPanel.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		_lblGeneration = new JLabel();
+		_lblGeneration.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblGeneration);
+		
+		_lblLiving = new JLabel();
+		_lblLiving.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblLiving);
+		
+	}
+	
 	private void buildGrid() {
 		gridPanel = new JPanel();
 		frame.getContentPane().add(gridPanel, BorderLayout.CENTER);
@@ -125,7 +148,6 @@ public class LifeGUI {
 				gridPanel.add(_grid[y][x]);
 			}
 		}
-		
 	}
 	
 	private void buildCntrlPanel() {
@@ -194,9 +216,11 @@ public class LifeGUI {
 				btnPause.setEnabled(false);
 				btnStop.setEnabled(false);
 				
-				menuBar.setEnabled(false);
+				menuPresets.setEnabled(true);
 				
 				btnLaunch.setEnabled(true);
+				
+				enableGrid(true);
 				
 				Template.setTemplate();
 			}
@@ -217,20 +241,22 @@ public class LifeGUI {
 				
 				menuPresets.setEnabled(false);
 				
-				enableGrid(false);
-				
-				try {
-				    Thread.sleep(1000);
-				} catch(InterruptedException ex) {
-				    Thread.currentThread().interrupt();
-				}
-				
 				_logic = new GameLogic();
 				_game = new Thread(_logic);
 				_game.start();
 			}
 		});
 		launchPanel.add(btnLaunch);
+		
+	}
+	
+	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
+		
+		radioBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Template.setTemplate();
+			}
+		});
 		
 	}
 	
@@ -246,16 +272,6 @@ public class LifeGUI {
 			}
 		};
 		btn.addActionListener(gridBtnAction);
-	}
-	
-	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
-		
-		radioBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Template.setTemplate();
-			}
-		});
-		
 	}
 	
 	private void setGridSize(int y, int x) {

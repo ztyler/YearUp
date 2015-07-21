@@ -96,6 +96,7 @@ public class Template {
 	}
 	
 	private static void set(JButton btn) {
+		btn.setEnabled(false);
 		btn.setBackground(LifeGUI._alive);
 	}
 	

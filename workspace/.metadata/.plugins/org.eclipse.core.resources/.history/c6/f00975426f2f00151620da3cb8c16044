@@ -13,6 +13,8 @@ public class GameLogic implements Runnable {
 	JButton[][] grid;
 	JLabel genCount, livingCount;
 	
+	
+	
 	GameLogic() {
 		grid = LifeGUI._grid;
 		genCount = LifeGUI._lblGeneration;

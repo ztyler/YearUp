@@ -39,7 +39,7 @@ public class LifeGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(50, 50);
+					LifeGUI window = new LifeGUI(80, 80);
 					
 					window.frame.setVisible(true);
 					
@@ -148,7 +148,6 @@ public class LifeGUI {
 				gridPanel.add(_grid[y][x]);
 			}
 		}
-		
 	}
 	
 	private void buildCntrlPanel() {
@@ -241,8 +240,6 @@ public class LifeGUI {
 				btnStop.setEnabled(true);
 				
 				menuPresets.setEnabled(false);
-				
-				enableGrid(false);
 				
 				_logic = new GameLogic();
 				_game = new Thread(_logic);
