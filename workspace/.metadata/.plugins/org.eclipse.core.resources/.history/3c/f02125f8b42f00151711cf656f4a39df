@@ -68,6 +68,11 @@ public class GameLogic implements Runnable {
 				}
 			}
 		}
+		
+		if (lastGenLiving == living) {
+			continuous = false;
+		}
+		
 
 		genCount.setText("Generation: " + gen);
 		livingCount.setText("Living: " + living);

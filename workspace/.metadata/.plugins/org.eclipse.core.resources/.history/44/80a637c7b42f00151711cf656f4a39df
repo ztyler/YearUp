@@ -9,7 +9,7 @@ public class GameLogic implements Runnable {
 	
 	private volatile boolean running = true;
 	boolean continuous = true;
-	int gen, living, lastGenLiving;
+	int gen, living;
 	JButton[][] grid;
 	JLabel genCount, livingCount;
 	
@@ -68,10 +68,11 @@ public class GameLogic implements Runnable {
 				}
 			}
 		}
+		
 
 		genCount.setText("Generation: " + gen);
 		livingCount.setText("Living: " + living);
-		lastGenLiving = living;
+		
 		//update grid
 		for (JButton btn : birth) {
 			btn.setBackground(LifeGUI._alive);

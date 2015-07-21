@@ -54,4 +54,5 @@
 <fullyQualifiedTypeName name="GameLogic"/>
 <fullyQualifiedTypeName name="LifeGUI"/>
 <fullyQualifiedTypeName name="javax.swing.JCheckBoxMenuItem"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
 </qualifiedTypeNameHistroy>

@@ -24,8 +24,8 @@ public class LifeGUI {
 	static GameLogic _logic;
 	static Thread _game;
 	static JButton[][] _grid;
-	static Color _alive = new Color(255, 30, 30);
-	static Color _dead;
+	static Color _alive = Color.RED;
+	static Color _dead = new Color(125, 125, 125);
 	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
 	static JLabel _lblGeneration, _lblLiving;
 	
@@ -43,7 +43,7 @@ public class LifeGUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LifeGUI window = new LifeGUI(30, 30);
+					LifeGUI window = new LifeGUI(150, 150);
 					
 					window.frame.setVisible(true);
 					
@@ -63,7 +63,7 @@ public class LifeGUI {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 700, 700);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		buildMenu();
@@ -121,11 +121,12 @@ public class LifeGUI {
 		menuBar.add(menuOptions);
 		
 		checkboxCorpses = new JCheckBoxMenuItem("Corpses");
+		checkboxCorpses.setSelected(true);
 		menuOptions.add(checkboxCorpses);
 		checkboxCorpses.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (checkboxCorpses.isSelected()) {
-					_dead = new Color(175, 175, 175);
+				if (!checkboxCorpses.isSelected()) {
+					_dead = null;
 				}
 			}
 		});
