@@ -21,6 +21,7 @@ public class GameLogic implements Runnable {
 	}
 	
 	void newGeneration() {
+		gen++;
 		living = 0;
 		
 		List<JButton> birth = new ArrayList<JButton>();
@@ -69,7 +70,7 @@ public class GameLogic implements Runnable {
 		}
 		
 
-		genCount.setText("Generation: " + gen++);
+		genCount.setText("Generation: " + gen);
 		livingCount.setText("Living: " + living);
 		
 		//update grid
@@ -78,7 +79,7 @@ public class GameLogic implements Runnable {
 		}
 		
 		for (JButton btn : death) {
-			btn.setBackground(null);
+			btn.setBackground(LifeGUI._dead);
 		}
 		
 		try {

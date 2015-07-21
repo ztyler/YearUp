@@ -1,0 +1,324 @@
+import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.SwingConstants;
+import javax.swing.JCheckBoxMenuItem;
+
+public class LifeGUI {
+
+	static int _x;
+	static int _y;
+	static int _inititalLiving;
+	static GameLogic _logic;
+	static Thread _game;
+	static JButton[][] _grid;
+	static Color _alive = new Color(255, 30, 30);
+	static Color _dead;
+	static JRadioButtonMenuItem _radioDefault, _radioCheckerboard, _radioFourBoxes, _radioBorders, _radioMesh, _radioFlowers;
+	static JLabel _lblGeneration, _lblLiving;
+	
+	private JFrame frame;
+	private JMenu menuOptions;
+	private JCheckBoxMenuItem checkboxCorpses;
+	private JPanel gridPanel, controlPanel, launchPanel, counterPanel, panel;
+	private JButton btnPlay, btnStep, btnPause, btnStop, btnLaunch;
+	private JMenuBar menuBar;
+	private JMenu menuTemplates; 
+	private ButtonGroup templatesBtnGroup;
+	private JCheckBoxMenuItem checkboxContinuous;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LifeGUI window = new LifeGUI(150, 150);
+					
+					window.frame.setVisible(true);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public LifeGUI(int y, int x) {
+		_y = y;
+		_x = x;
+		_grid = new JButton[_y][_x];
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 700, 700);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		buildMenu();
+		
+		buildCounter();
+		
+		buildGrid();
+		
+		buildCntrlPanel();
+		
+	}
+	
+	private void buildMenu() {
+		
+		menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		menuTemplates = new JMenu("Templates");
+		menuBar.add(menuTemplates);
+		
+		templatesBtnGroup = new ButtonGroup();
+		
+		_radioDefault = new JRadioButtonMenuItem("Default");
+		_radioDefault.setSelected(true);
+		setRadioBtn(_radioDefault);
+		menuTemplates.add(_radioDefault);
+		templatesBtnGroup.add(_radioDefault);
+		
+		_radioCheckerboard = new JRadioButtonMenuItem("Checkerboard");
+		setRadioBtn(_radioCheckerboard);
+		menuTemplates.add(_radioCheckerboard);
+		templatesBtnGroup.add(_radioCheckerboard);
+		
+		_radioFourBoxes = new JRadioButtonMenuItem("Four Boxes");
+		setRadioBtn(_radioFourBoxes);
+		menuTemplates.add(_radioFourBoxes);
+		templatesBtnGroup.add(_radioFourBoxes);
+		
+		_radioBorders = new JRadioButtonMenuItem("Borders");
+		setRadioBtn(_radioBorders);
+		menuTemplates.add(_radioBorders);
+		templatesBtnGroup.add(_radioBorders);
+		
+		_radioMesh = new JRadioButtonMenuItem("Mesh");
+		setRadioBtn(_radioMesh);
+		menuTemplates.add(_radioMesh);
+		templatesBtnGroup.add(_radioMesh);
+		
+		_radioFlowers = new JRadioButtonMenuItem("Flower Garden");
+		setRadioBtn(_radioFlowers);
+		menuTemplates.add(_radioFlowers);
+		templatesBtnGroup.add(_radioFlowers);
+		
+		menuOptions = new JMenu("Options");
+		menuBar.add(menuOptions);
+		
+		checkboxCorpses = new JCheckBoxMenuItem("Corpses");
+		menuOptions.add(checkboxCorpses);
+		checkboxCorpses.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (checkboxCorpses.isSelected()) {
+					_dead = new Color(200, 200, 200);
+				}
+			}
+		});
+		
+		checkboxContinuous = new JCheckBoxMenuItem("Continuous");
+		checkboxContinuous.setSelected(true);
+		menuOptions.add(checkboxContinuous);
+	}
+	
+	private void buildCounter() {
+		
+		counterPanel = new JPanel();
+		frame.getContentPane().add(counterPanel, BorderLayout.NORTH);
+		counterPanel.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		_lblGeneration = new JLabel();
+		_lblGeneration.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblGeneration);
+		
+		_lblLiving = new JLabel();
+		_lblLiving.setHorizontalAlignment(SwingConstants.CENTER);
+		counterPanel.add(_lblLiving);
+		
+	}
+	
+	private void buildGrid() {
+		gridPanel = new JPanel();
+		frame.getContentPane().add(gridPanel, BorderLayout.CENTER);
+		
+		if (_x != 0) {
+			setGridSize(_y, _x);;
+		}
+		else {
+			setGridSize(25, 25);;
+		}
+		
+		for (int y = 0; y < _grid.length; y++) {
+			for (int x = 0; x < _grid[y].length; x++) {
+				_grid[y][x] = new JButton();
+				setGridBtn(_grid[y][x]);
+				gridPanel.add(_grid[y][x]);
+			}
+		}
+	}
+	
+	private void buildCntrlPanel() {
+		
+		panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.SOUTH);
+		panel.setLayout(new GridLayout(2, 1, 0, 0));
+		
+		controlPanel = new JPanel();
+		panel.add(controlPanel);
+		controlPanel.setLayout(new GridLayout(0, 4, 0, 0));
+		
+		launchPanel = new JPanel();
+		panel.add(launchPanel);
+		launchPanel.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		btnPlay = new JButton("Play");
+		btnStep = new JButton("Step");
+		btnPause = new JButton("Pause");
+		btnStop = new JButton("Stop");
+		
+		btnPlay.setEnabled(false);
+		btnStep.setEnabled(false);
+		btnPause.setEnabled(false);
+		btnStop.setEnabled(false);
+		
+		//Play button
+		btnPlay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnPlay.setEnabled(false);
+				btnStep.setEnabled(false);
+				btnPause.setEnabled(true);
+				
+				_logic.continuous = true;
+			}
+		});
+		
+		//Step button
+		btnStep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				_logic.newGeneration();
+			}
+		});
+		
+		//Pause button
+		btnPause.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnPlay.setEnabled(true);
+				btnStep.setEnabled(true);
+				btnPause.setEnabled(false);
+				
+				_logic.continuous = false;
+			}
+		});
+		
+		//Stop button
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				_logic.continuous = false;
+				_logic.terminate();;
+				_game = null;
+				_logic = null;
+				
+				btnPlay.setEnabled(false);
+				btnStep.setEnabled(false);
+				btnPause.setEnabled(false);
+				btnStop.setEnabled(false);
+				
+				menuTemplates.setEnabled(true);
+				menuOptions.setEnabled(true);
+				
+				btnLaunch.setEnabled(true);
+				
+				enableGrid(true);
+				
+				Template.setTemplate();
+			}
+		});
+		
+		controlPanel.add(btnPlay);
+		controlPanel.add(btnStep);
+		controlPanel.add(btnPause);
+		controlPanel.add(btnStop);
+		
+		//Launch button
+		btnLaunch = new JButton("Launch");
+		btnLaunch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				_logic = new GameLogic();
+				
+				menuTemplates.setEnabled(false);
+				menuOptions.setEnabled(false);
+				
+				btnLaunch.setEnabled(false);
+				btnStop.setEnabled(true);
+				
+				if (checkboxContinuous.isSelected()) {
+					btnPause.setEnabled(true);
+				}
+				else {
+					btnPlay.setEnabled(true);
+					btnStep.setEnabled(true);
+					_logic.continuous = false;
+				}
+				
+				_game = new Thread(_logic);
+				_game.start();
+			}
+		});
+		launchPanel.add(btnLaunch);
+		
+	}
+	
+	private void setRadioBtn(JRadioButtonMenuItem radioBtn) {
+		
+		radioBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Template.setTemplate();
+			}
+		});
+		
+	}
+	
+	private void setGridBtn(JButton btn) {
+		ActionListener gridBtnAction = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (btn.getBackground() != _alive) {
+					btn.setBackground(_alive);
+				}
+				else {
+					btn.setBackground(_dead);
+				}
+			}
+		};
+		btn.addActionListener(gridBtnAction);
+	}
+	
+	private void setGridSize(int y, int x) {
+		gridPanel.setLayout(new GridLayout(y, x, 0, 0));
+	}
+	
+	private void enableGrid(boolean option) {
+		for (int y = 0; y < _grid.length; y++) {
+			for (int x = 0; x < _grid[y].length; x++) {
+				JButton btn = _grid[y][x];
+				if (btn.isEnabled() == option) {
+					continue;
+				}
+				btn.setEnabled(option);
+			}
+		}
+	}
+}

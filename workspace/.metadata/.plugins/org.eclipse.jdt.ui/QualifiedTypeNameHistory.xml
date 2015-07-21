@@ -53,4 +53,5 @@
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
 <fullyQualifiedTypeName name="GameLogic"/>
 <fullyQualifiedTypeName name="LifeGUI"/>
+<fullyQualifiedTypeName name="javax.swing.JCheckBoxMenuItem"/>
 </qualifiedTypeNameHistroy>
